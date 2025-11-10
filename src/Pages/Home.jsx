@@ -34,7 +34,7 @@ const Home = () => {
 
           <div className='card bg-base-100 h-100 w-96 shadow-sm'>
             <div className='w-96 h-60 p-2 object-cover'>
-              <img className=' rounded-xl' src={image1} alt="" />
+              <img className=' rounded-xl' src={image2} alt="" />
             </div>
             <div className='text-center'>
               <h1 className='text-4xl'>Pet Health</h1>
@@ -46,7 +46,7 @@ const Home = () => {
 
           <div className='card bg-base-100 h-100 w-96 shadow-sm'>
             <div className='w-96 h-60 p-2 object-cover'>
-              <img className=' rounded-xl' src={image1} alt="" />
+              <img className=' rounded-xl' src={image3} alt="" />
             </div>
             <div className='text-center'>
               <h1 className='text-4xl'>Pet Health</h1>
