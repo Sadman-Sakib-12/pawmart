@@ -13,7 +13,7 @@ const AddListing = () => {
             price: e.target.price.value,
             description: e.target.description.value,
             date: new Date(),
-            email: user.email
+            created_by: user.email
         }
         fetch('http://localhost:3000/models',{
             method: "POST",
