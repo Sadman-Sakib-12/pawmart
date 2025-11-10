@@ -1,0 +1,49 @@
+import { createBrowserRouter } from "react-router";
+import MainLoyouts from "../Layouts/MainLoyouts";
+import Home from "../Pages/Home";
+import Register from "../Pages/Register";
+import Login from "../Pages/Login";
+import AddListing from "../Pages/AddListing";
+import PetsSupplies from "../Pages/PetsSupplies";
+import MyListings from "../Pages/MyListings";
+import MyOrders from "../Pages/MyOrders";
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <MainLoyouts />,
+        children: [
+            {
+                path: "/",
+                element: <Home />,
+                loader: () => fetch('http://localhost:3000/models')
+            },
+            {
+                path: "/pets-supplies",
+                element: <PetsSupplies />,
+                loader: () => fetch('http://localhost:3000/models')
+            },
+            {
+                path: "/add-listing",
+                element: <AddListing />,
+            },
+            {
+                path: "/my-listing",
+                element: <MyListings/>,
+            },
+            {
+                path: "/my-orderes",
+                element: <MyOrders/>
+            },
+            {
+                path: "/regiter",
+                element: <Register />
+            },
+            {
+                path: "/login",
+                element: <Login />
+            }
+        ]
+    }
+])
+export default router;
