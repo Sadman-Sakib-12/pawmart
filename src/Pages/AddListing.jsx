@@ -53,9 +53,9 @@ const AddListing = () => {
                         className='select w-full rounded-full focus:border-0 focus:outline-gray-200'>
                             <option value="" disabled>Category Select</option>
                             <option value="Pets">Pets</option>
-                            <option value="Foo">Food</option>
+                            <option value="Foo">Pet Food</option>
                             <option value="Accessories">Accessories</option>
-                            <option value="Care Products">Care Products</option>
+                            <option value="Care Products">Pet Care Products</option>
                         </select>
                     </div>
                     <div>

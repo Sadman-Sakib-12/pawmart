@@ -10,13 +10,7 @@ const Home = () => {
   console.log(data)
   return (
     <div>
-      <Banner />
-      <div className='grid grid-cols-3 mt-10'>
-        {
-          data.map(model => <CategoryCard model={model} />)
-        }
-      </div>
-
+      <Banner /> 
       <div>
         <h1 className='text-center text-3xl  font-bold mt-5'>Why Adopt from PawMart?</h1>
         <div className='mt-5 mb-6 grid grid-cols-3 gap-3'>

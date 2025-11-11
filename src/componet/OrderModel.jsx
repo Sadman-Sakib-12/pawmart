@@ -12,7 +12,7 @@ const OrderModel = ({ model, setOrder }) => {
             location: model.location,
             price: model.price,
             date: new Date(),
-            email: user.created_by,
+            email: user.email,
             address: e.target.address.value,
             phone: e.target.phone.value,
             note: e.target.note.value,
@@ -35,12 +35,12 @@ const OrderModel = ({ model, setOrder }) => {
             })
     }
     return (
-        <div>
+        <div className='mt-10'> 
 
-            <div className='border mt-6 mb-8 border-gray-200 bg-base-100    max-w-md mx-auto shadow-2xl rounded-2xl'>
-                <div className='card-body p-6 relative'>
-                    <h2 className='text-2xl font-bold text-center mb-6'>Place Order</h2>
-                    <form onSubmit={handleSubmite} className='space-y-4'>
+            <div className='border mb-0  border-gray-200 bg-base-100  mx-auto shadow-2xl rounded-2xl'>
+                <div className='card-body p-2 relative'>
+                    <h2 className='text-2xl font-bold text-center mb-'>Place Order</h2>
+                    <form onSubmit={handleSubmite} className='space-y-2'>
                         <div>
                             <label className='label font-medium'>Buyer Name</label>
                             <input
@@ -100,7 +100,7 @@ const OrderModel = ({ model, setOrder }) => {
                         <div>
                             <label className='label font-medium'>Additional Notes</label>
                             <textarea
-                                name="notes"
+                                name="note"
                                 required
                                 rows='3'    
                                 className='input w-full rounded-full focus:border-0 focus:outline-gray-200'></textarea>
@@ -108,7 +108,7 @@ const OrderModel = ({ model, setOrder }) => {
                         <div>
                             <button
                                 type='submit'
-                                className='btn w-full text-white mt-6 rounded-full bg-linear-to-r from-pink-500 to-red-600 hover:from-pink-600 hover:to-red-700'>Confirm Order</button>
+                                onClick={''} className='btn w-full  text-white mt-6 rounded-full bg-linear-to-r from-pink-500 to-red-600 hover:from-pink-600 hover:to-red-700'>Confirm Order</button>
                         </div>
                     </form>
                 </div>

@@ -20,24 +20,24 @@ const ListingDatailsCard = () => {
                     <h2 className="card-title">{model.name}</h2>
                     <p>{model.description}</p>
                     <p>{model.category}</p>
-                    {/* <div className='flex justify-between items-center'>
+                    <div className='flex justify-between items-center'>
                         <div className='flex gap-1 items-center bg-yellow-100  rounded py-1 px-2'>
                             <p className=''>{model.email}</p>
                         </div>
                         <p className='bg-gray-200  rounded py-1 px-5'> {model.price}</p>
                         <p className='bg-gray-200  rounded py-1 px-5'>{model.location}</p>
-                    </div> */}
+                    </div>
 
 
                     <div>
-                        <div className="card-actions  justify-end">
+                        <div className="card-actions justify-end">
 
                             {/* The button to open modal */}
-                            <a href="#my_modal_8" onClick={() => setOrder(true)} className="btn">Order</a>
+                            <a href="#my_modal_8 " onClick={() => setOrder(true)} className="btn">Order</a>
 
 
                             {/* Put this part before </body> tag */}
-                            <div className="modal   " role="dialog" id="my_modal_8">
+                            <div className="modal    w-full " role="dialog" id="my_modal_8">
                                 <div className="modal-box">
                                     {
                                         order && <OrderModel setOrder={setOrder} model={model} />
