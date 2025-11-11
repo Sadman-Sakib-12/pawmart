@@ -8,6 +8,7 @@ import PetsSupplies from "../Pages/PetsSupplies";
 import MyListings from "../Pages/MyListings";
 import MyOrders from "../Pages/MyOrders";
 import ListingDatailsCard from "../componet/ListingDatailsCard";
+import OrderModel from "../componet/OrderModel";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
             {
                 path: "/my-orderes",
                 element: <MyOrders/>
+            },
+            {
+                path: "/my-orderes/:id",
+                element: <OrderModel/>,
+                loader:({params})=>fetch(`http://localhost:3000/models/${params.id}`),
             },
             {
                 path: "/regiter",

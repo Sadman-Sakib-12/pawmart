@@ -1,39 +1,13 @@
 import { use, useState } from "react"
 import { Link, useLoaderData } from "react-router"
 import { AuthContext } from "../context/AuthContext"
+import OrderModel from "./OrderModel"
 
 const ListingDatailsCard = () => {
     const data = useLoaderData()
     const model = data.result
-    const [order, setOrder] = useState([])
-    const { user } = use(AuthContext)
-    const handleDownload= (e) => {
-        e.preventDefault()
-        const fromData = {
-            name: e.target.name.value,
-            category: e.target.category.value,
-            location: e.target.location.value,
-            image: e.target.image.value,
-            price: e.target.price.value,
-            description: e.target.description.value,
-            date: new Date(),
-            created_by: user.email
-        }
-        fetch('http://localhost:3000/order', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(fromData)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }
+    // const { user } = use(AuthContext)
+    const [order, setOrder] = useState(false)
     return (
         <div>
             <div className=" p-8 bg-base-100 w-[320px] md:w-[950px] mx-auto shadow-sm">
@@ -53,8 +27,29 @@ const ListingDatailsCard = () => {
                         <p className='bg-gray-200  rounded py-1 px-5'> {model.price}</p>
                         <p className='bg-gray-200  rounded py-1 px-5'>{model.location}</p>
                     </div> */}
-                    <div className="card-actions justify-end">
-                        <Link onClick={handleDownload} className="btn btn-primary">Order</Link>
+
+
+                    <div>
+                        <div className="card-actions  justify-end">
+
+                            {/* The button to open modal */}
+                            <a href="#my_modal_8" onClick={() => setOrder(true)} className="btn">Order</a>
+
+
+                            {/* Put this part before </body> tag */}
+                            <div className="modal   " role="dialog" id="my_modal_8">
+                                <div className="modal-box">
+                                    {
+                                        order && <OrderModel setOrder={setOrder} model={model} />
+                                    }
+                                    <div className="modal-action">
+                                        <a href="#" className="btn">Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </div>
