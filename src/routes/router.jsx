@@ -43,6 +43,10 @@ const router = createBrowserRouter([
                 element: <MyOrders/>
             },
             {
+                path: "/my-orderes",
+                
+            },
+            {
                 path: "/my-orderes/:id",
                 element: <OrderModel/>,
                 loader:({params})=>fetch(`http://localhost:3000/models/${params.id}`),

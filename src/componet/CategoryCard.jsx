@@ -1,23 +1,68 @@
 import React from 'react'
-import { Link} from 'react-router'
+import { Link } from 'react-router'
+import imgag from '../assets/image.png'
 
-const CategoryCard = ({model}) => {
-    const{category,date,description ,_id,email,image,location,name,price}=model
+const CategoryCard = () => {
+    //  const { category, date, description,_id, email, image, location, name, price } = model
     return (
-        <div className="card bg-base-100 w-96 shadow-sm">
-            <figure className='w-96 h-60 p- object-cover'>
-                <img
-                    src={image}
-                    alt="Shoes" />
-            </figure>
-            <div className="card-body">
-                <h2 className="card-title">Card Title</h2>
-                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                <div className="card-actions justify-end">
-                   <Link to={`/listing-details/${_id}`}>See Details</Link>
+        <div className='grid grid-cols-4 gap-6 mt-10'>
+            <div className="w-80 card shadow">
+                <figure className='w-80 h-40 rounded-lg object-cover'>
+                    <img className=' rounded-md'
+                        src={imgag}
+                        alt="Shoes" />
+                </figure>
+                <div className="card-body">
+                    <h2 className="card-title text-4xl">Pets</h2>
+                    <div className="card-actions justify-end">
+                        <Link className='btn bg-pink-500' to={``}>See Details</Link>
+                    </div>
                 </div>
             </div>
+            <div className="w-80 card shadow">
+                <figure className='w-80 h-40 rounded-lg object-cover'>
+                    <img className=' rounded-md'
+                        src={imgag}
+                        alt="Shoes" />
+                </figure>
+                <div className="card-body">
+                    <h2 className="card-title text-4xl">Pet Food</h2>
+                    <div className="card-actions justify-end">
+                        {/* <Link to={`/listing-details/${_id}`}>See Details</Link> */}
+                    </div>
+                </div>
+            </div>
+            <div className="w-80 card shadow">
+                <figure className='w-80 h-40 rounded-lg object-cover'>
+                    <img className=' rounded-md'
+                        src={imgag}
+                        alt="Shoes" />
+                </figure>
+                <div className="card-body">
+                    <h2 className="card-title text-4xl"> Accessories</h2>
+                    <div className="card-actions justify-end">
+                        {/* <Link to={`/listing-details/${_id}`}>See Details</Link> */}
+                    </div>
+                </div>
+            </div>
+            <div className="w-80 card shadow">
+                <figure className='w-80 h-40 rounded-lg object-cover'>
+                    <img className=' rounded-md'
+                        src={imgag}
+                        alt="Shoes" />
+                </figure>
+                <div className="card-body">
+                    <h2 className="card-title text-4xl"> Pet Care Products</h2>
+                    <div className="card-actions justify-end">
+                        {/* <Link to={`/listing-details/${_id}`}>See Details</Link> */}
+                    </div>
+                </div>
+            </div>
+
+           
+
         </div>
+
     )
 }
 

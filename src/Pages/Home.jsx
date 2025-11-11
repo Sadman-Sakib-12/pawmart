@@ -10,7 +10,8 @@ const Home = () => {
   console.log(data)
   return (
     <div>
-      <Banner /> 
+      <Banner />
+      <CategoryCard/> 
       <div>
         <h1 className='text-center text-3xl  font-bold mt-5'>Why Adopt from PawMart?</h1>
         <div className='mt-5 mb-6 grid grid-cols-3 gap-3'>
