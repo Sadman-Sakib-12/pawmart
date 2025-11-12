@@ -5,7 +5,7 @@ import {
     signInWithEmailAndPassword,
     signInWithPopup,
     signOut,
-    updateProfile,
+    // updateProfile,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { auth } from "../firebase/firebase.config";
@@ -21,9 +21,9 @@ const AuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth,email,password)
     }
 
-    const updateProfileFunc = ({displayName, photoURL}) => {
-        return updateProfile(auth.currentUser,{ displayName,photoURL})
-    }
+    // const updateProfileFunc = ({displayName, photoURL}) => {
+    //     return updateProfile(auth.currentUser,{ displayName,photoURL})
+    // }
     // const sendEmailVerificationFunc=()=>{
     //     setLoadign(true)
     //     return sendEmailVerification(auth.currentUser)
@@ -49,7 +49,7 @@ const AuthProvider = ({ children }) => {
         user,
         setUser,
         createUserWithEmailAndPasswordFunc,
-        updateProfileFunc,
+        // updateProfileFunc,
         signoutUserFunc,
         signInWithEmailAndPasswordFunc,
         // sendEmailVerificationFunc,

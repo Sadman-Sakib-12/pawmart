@@ -6,7 +6,7 @@ const Register = () => {
  const [show, setShow] = useState(false)
   const {
     createUserWithEmailAndPasswordFunc,
-    updateProfileFunc,
+    // updateProfileFunc,
     signoutUserFunc,
     signInwithEmailFunc,
     setUser,

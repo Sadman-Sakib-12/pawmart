@@ -10,6 +10,7 @@ import MyOrders from "../Pages/MyOrders";
 import ListingDatailsCard from "../componet/ListingDatailsCard";
 import OrderModel from "../componet/OrderModel";
 import FilteredProductPage from "../Pages/FilteredProductPage";
+import Error from "../Pages/Error";
 
 const router = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                loader: () => fetch('http://localhost:3000/models')
+                // loader: () => fetch('http://localhost:3000/models')
             },
             {
                 path: "/pets-supplies",
@@ -32,25 +33,25 @@ const router = createBrowserRouter([
             },
             {
                 path: "/my-listing",
-                element: <MyListings/>,
+                element: <MyListings />,
             },
             {
                 path: "/listing-details/:id",
-                element: <ListingDatailsCard/>,
-                 loader: ({params}) => fetch(`http://localhost:3000/models/${params.id}`)
+                element: <ListingDatailsCard />,
+                loader: ({ params }) => fetch(`http://localhost:3000/models/${params.id}`)
             },
             {
                 path: "/my-orderes",
-                element: <MyOrders/>
+                element: <MyOrders />
             },
             {
                 path: "/category-filtered-prduct/:categoryName",
-                element:<FilteredProductPage/>
+                element: <FilteredProductPage />
             },
             {
                 path: "/my-orderes/:id",
-                element: <OrderModel/>,
-                loader:({params})=>fetch(`http://localhost:3000/models/${params.id}`),
+                element: <OrderModel />,
+                loader: ({ params }) => fetch(`http://localhost:3000/models/${params.id}`),
             },
             {
                 path: "/regiter",
@@ -59,8 +60,12 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login />
-            }
+            },
         ]
+    },
+      {
+        path: "*",
+        element: <Error />
     }
 ])
 export default router;

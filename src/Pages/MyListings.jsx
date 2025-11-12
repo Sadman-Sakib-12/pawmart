@@ -1,5 +1,4 @@
 import React, { use, useEffect, useState } from 'react'
-import MyListingCard from '../componet/MyListingCard'
 import { AuthContext } from '../context/AuthContext'
 
 const MyListings = () => {
@@ -8,7 +7,7 @@ const MyListings = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    if(!user?.email)return
+    if (!user?.email) return
     fetch(`http://localhost:3000/my-lisiting?email=${user.email}`)
       .then(res => res.json())
       .then(data => {
@@ -20,10 +19,30 @@ const MyListings = () => {
     return <div>Loading</div>
   }
   return (
-    <div className='grid grid-cols-3 gap-3 mb-5'>
-      {
-        listing.map(model => <MyListingCard model={model} />)
-      }
+    <div className='p-2'>
+      <table className='min-w-full '>
+        <thead >
+          <tr className='bg-gray-100 text-left'>
+            <th className='px-4 py-2 border'>Name</th>
+            <th className='px-4 py-2 border'>Category</th>
+            <th className='px-4 py-2 border'>Price</th>
+            <th className='px-4 py-2 border'>Location</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {listing.map(model => (
+            <tr>
+              <td className='px-4 py-2 border'>{model.name}</td>
+              <td className='px-4 py-2 border'>{model.category}</td>
+              <td className='px-4 py-2 border'>{model.price}</td>
+              <td className='px-4 py-2 border'>{model.location}</td>
+              <td className='px-4 py-2 border'>Update</td>
+              <td className='px-4 py-2 border'>Delete</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
