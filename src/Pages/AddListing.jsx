@@ -55,7 +55,7 @@ const AddListing = () => {
                             <option value="Pets">Pets</option>
                             <option value="Foo">Pet Food</option>
                             <option value="Accessories">Accessories</option>
-                            <option value="Care Products">Pet Care Products</option>
+                            <option value="Pet Care Products">Pet Care Products</option>
                         </select>
                     </div>
                     <div>

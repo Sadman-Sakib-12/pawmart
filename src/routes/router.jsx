@@ -9,6 +9,7 @@ import MyListings from "../Pages/MyListings";
 import MyOrders from "../Pages/MyOrders";
 import ListingDatailsCard from "../componet/ListingDatailsCard";
 import OrderModel from "../componet/OrderModel";
+import FilteredProductPage from "../Pages/FilteredProductPage";
 
 const router = createBrowserRouter([
     {
@@ -43,8 +44,8 @@ const router = createBrowserRouter([
                 element: <MyOrders/>
             },
             {
-                path: "/my-orderes",
-                
+                path: "/category-filtered-prduct/:categoryName",
+                element:<FilteredProductPage/>
             },
             {
                 path: "/my-orderes/:id",
