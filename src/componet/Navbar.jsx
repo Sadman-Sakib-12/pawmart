@@ -19,16 +19,19 @@ const Navbar = () => {
                         <li>
                             <NavLink to='/pets-supplies'>Pets Supplies</NavLink>
                         </li>
-                        <li>
-                            <NavLink to='/add-listing'>Add Listing</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/my-listing'>My Listings</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/my-orderes'>My Orders</NavLink>
-                        </li>
-
+                        {user && (
+                            <>
+                                <li>
+                                    <NavLink to='/add-listing'>Add Listing</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to='/my-listing'>My Listings</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to='/my-orderes'>My Orders</NavLink>
+                                </li>
+                            </>
+                        )}
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-xl">PawMart</a>
@@ -39,15 +42,19 @@ const Navbar = () => {
                     <li>
                         <NavLink to='/pets-supplies'>Pets Supplies</NavLink>
                     </li>
-                    <li>
-                        <NavLink to='/add-listing'>Add Listing</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/my-listing'>My Listings</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/my-orderes'>My Orders</NavLink>
-                    </li>
+                    {user && (
+                        <>
+                            <li>
+                                <NavLink to='/add-listing'>Add Listing</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/my-listing'>My Listings</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/my-orderes'>My Orders</NavLink>
+                            </li>
+                        </>
+                    )}
                 </ul>
             </div>
 

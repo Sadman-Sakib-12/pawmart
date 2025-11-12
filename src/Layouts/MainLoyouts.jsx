@@ -2,13 +2,15 @@ import React from 'react'
 import Navbar from '../componet/Navbar'
 import { Outlet } from 'react-router'
 import Footer from '../componet/Footer'
+import { Toaster } from 'react-hot-toast'
 
 const MainLoyouts = () => {
   return (
-    <div className='max-w-7xl mx-auto' >
+    <div className='max-w-7xl mx-auto bg-gray-100' >
         <Navbar/>
-        <main className='max-w-7xl mx-auto'> 
+        <main className='min-h-[calc(100vh-178px)]'> 
             <Outlet/>
+            <Toaster/>
         </main>
         <Footer/>
     </div>

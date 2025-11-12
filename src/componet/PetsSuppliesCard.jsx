@@ -11,10 +11,13 @@ const PetsSuppliesCard = ({ model }) => {
                     alt="Shoes" />
             </figure>
             <div className="card-body">
-                <h2 className="card-title">{category}</h2>
-                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+               
+                <p>{name}</p>
+                 <h2 className="card-title">{category}</h2>
+                 <h2 className="card-title">{location}</h2>
+                 <h2 className="card-title">${price}</h2>
                 <div className="card-actions justify-end">
-                    <Link to={`/listing-details/${_id}`}>See Details</Link>
+                    <Link className='btn w-full bg-pink-600 rounded-lg text-white' to={`/listing-details/${_id}`}>See Details</Link>
                 </div>
             </div>
         </div>

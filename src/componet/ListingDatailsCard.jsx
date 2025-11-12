@@ -10,30 +10,32 @@ const ListingDatailsCard = () => {
     const [order, setOrder] = useState(false)
     return (
         <div>
-            <div className=" p-8 bg-base-100 w-[320px] md:w-[950px] mx-auto shadow-sm">
-                <figure>
+            <div className=" flex gap-4 mt-10 rounded-lg bg-base-100 h-[350px] w-[320px] md:w-[650px] mx-auto shadow-sm">
+                <figure >
                     <img
-                        className=' h-[200px] md:h-[400px] w-[300px] md:w-[800px]' src={model.image}
+                        className=' h-[300px] md:h-[300px] p- rounded-lg w-[300px] md:w-[300px]' src={model.image}
                         alt="Shoes" />
                 </figure>
-                <div className="">
-                    <h2 className="card-title">{model.name}</h2>
-                    <p>{model.description}</p>
-                    <p>{model.category}</p>
-                    <div className='flex justify-between items-center'>
-                        <div className='flex gap-1 items-center bg-yellow-100  rounded py-1 px-2'>
-                            <p className=''>{model.email}</p>
+                <div className=" ">
+                    <div className="space-y-2">
+                        <h2 className="card-title">{model.name}</h2>
+                        <p>{model.category}</p>
+                        <p className=' rounded '>{model.location}</p>
+
+                        <div className='space-y-2'>
+                            <p className=''>{model.created_by}</p>
+                            <p>{model.description}</p>
+                            <p className=' rounded '>${model.price}</p>
+
                         </div>
-                        <p className='bg-gray-200  rounded py-1 px-5'> {model.price}</p>
-                        <p className='bg-gray-200  rounded py-1 px-5'>{model.location}</p>
                     </div>
 
 
-                    <div>
-                        <div className="card-actions justify-end">
+                    <div className="mt-10">
+                        <div className=" p-5 justify-end">
 
                             {/* The button to open modal */}
-                            <a href="#my_modal_8 " onClick={() => setOrder(true)} className="btn">Order</a>
+                            <a href="#my_modal_8 " onClick={() => setOrder(true)} className=" btn w-full bg-pink-600 rounded-lg text-white">Order Now</a>
 
 
                             {/* Put this part before </body> tag */}

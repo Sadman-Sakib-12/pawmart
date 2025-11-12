@@ -35,9 +35,9 @@ const OrderModel = ({ model, setOrder }) => {
             })
     }
     return (
-        <div className='mt-10'> 
+        <div >
 
-            <div className='border mb-0  border-gray-200 bg-base-100  mx-auto shadow-2xl rounded-2xl'>
+            <div className=' border-gray-200 bg-base-100  mx-auto shadow-2xl rounded-2xl'>
                 <div className='card-body p-2 relative'>
                     <h2 className='text-2xl font-bold text-center mb-'>Place Order</h2>
                     <form onSubmit={handleSubmite} className='space-y-2'>
@@ -69,6 +69,7 @@ const OrderModel = ({ model, setOrder }) => {
                         <div>
                             <label className='label font-medium'>Quantity</label>
                             <input
+                                type='number'
                                 name="quantity"
                                 required
                                 className='input w-full rounded-full focus:border-0 focus:outline-gray-200' alt="" />
@@ -92,9 +93,9 @@ const OrderModel = ({ model, setOrder }) => {
                         <div>
                             <label className='label font-bold'>Phone</label>
                             <input
-                                 name="phone"
+                                name="phone"
                                 required
-                                className='input w-full rounded-full focus:border-0 focus:outline-gray-200'/>
+                                className='input w-full rounded-full focus:border-0 focus:outline-gray-200' />
                         </div>
 
                         <div>
@@ -102,7 +103,7 @@ const OrderModel = ({ model, setOrder }) => {
                             <textarea
                                 name="note"
                                 required
-                                rows='3'    
+                                rows='3'
                                 className='input w-full rounded-full focus:border-0 focus:outline-gray-200'></textarea>
                         </div>
                         <div>

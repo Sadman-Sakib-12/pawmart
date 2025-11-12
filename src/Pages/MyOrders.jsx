@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from 'react'
 import { AuthContext } from '../context/AuthContext'
 import jsPDF from 'jspdf'
 import autoTable from 'jspdf-autotable'
+import { Link } from 'react-router'
 
 const MyOrders = () => {
   const [myorder, setMyorder] = useState([])
@@ -52,7 +53,7 @@ const MyOrders = () => {
                 <td className='px-4 py-2 border'>{order.category}</td>
                 <td className='px-4 py-2 border'>{order.buyerName}</td>
                 <td className='px-4 py-2 border'>{order.price}</td>
-                
+                <td className='px-4 py-2 border'>{order.date}</td>
                 <td className='px-4 py-2 border'>{order.quantity}</td>
               </tr>
             ))}
@@ -61,9 +62,9 @@ const MyOrders = () => {
       </div>
       {
         myorder.length > 0 && (
-          <button onClick={handleDownloadPdf}>
+          <Link onClick={handleDownloadPdf}>
             Download
-          </button>
+          </Link>
         )
       }
     </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import { Link, useParams } from 'react-router'
 
 const FilteredProductPage = () => {
   const { categoryName } = useParams()
@@ -15,17 +15,17 @@ const FilteredProductPage = () => {
     <div className='grid grid-cols-3 gap-3'>
       {
         products.map((item) => (
-          <div className="card bg-base-100 w-96 shadow-sm">
-            <figure className='w-96 h-60 p- object-cover'>
+          <div className="card bg-base-100 w-85 mt-8 shadow-sm">
+            <figure className='w-85 h-60 object-cover'>
               <img
                 src={item.image}
                 alt="Shoes" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{item.name}</h2>
-              <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+              <p>{item.description}</p>
               <div className="card-actions justify-end">
-                {/* <Link to={`/listing-details/${_id}`}>See Details</Link> */}
+                <Link to={`/listing-details/${item._id}`}>See Details</Link>
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router'
 import { AuthContext } from '../context/AuthContext'
+import toast from 'react-hot-toast'
 
 const Register = () => {
  const [show, setShow] = useState(false)

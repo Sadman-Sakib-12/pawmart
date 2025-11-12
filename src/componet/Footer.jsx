@@ -3,18 +3,18 @@ import { Link } from 'react-router';
 
 const Footer = () => {
   return (
-    <div>
+    <div className=''>
 
-      <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
+      <footer className="footer bg-black text-white sm:footer-horizontal h-45  p-10">
 
-        <aside className='flex gap-5'>
+        <aside className=' gap-5'>
           <h1 className='text-4xl'>PawMart</h1>
           <p>
             PawMart connects local pet owners <br />and buyers for adoption <br />and pet care products.
           </p>
         </aside>
         <nav className='ml-98 text-center'>
-          <h6 className="footer-title">Useful Links</h6>
+          <h6 className="footer-title to-white">Useful Links</h6>
           <Link className="link link-hover">Home</Link>
           <Link className="link link-hover">Contact</Link>
           <Link className="link link-hover">Terms</Link>
@@ -22,7 +22,7 @@ const Footer = () => {
 
 
       </footer>
-      <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+      <footer className="footer bg-black sm:footer-horizontal footer-center text-white p-4">
         <aside>
           <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
         </aside>

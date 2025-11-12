@@ -62,6 +62,7 @@ const AddListing = () => {
                         <label className='label font-medium'>Price</label>
                         <input
                             name='price'
+                            type='number'
                             required
                             className='input w-full rounded-full focus:border-0 focus:outline-gray-200' />
                     </div>

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router'
 import { AuthContext } from '../context/AuthContext'
+import toast from 'react-hot-toast'
 
 const Login = () => {
    const [show, setShow] = useState(false)
