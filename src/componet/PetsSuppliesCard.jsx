@@ -8,7 +8,7 @@ const PetsSuppliesCard = ({ model }) => {
            
 
             <div className="card bg-base-100 w-80 md:w-96 shadow-sm">
-                <figure className='w-80 md:w-96 h-60 p- object-cover'>
+                <figure className='w-80 md:w-96 h-60 p- object-cover hover:scale-105 transition-transform'>
                     <img
                         src={image}
                         alt="Shoes" />

@@ -20,7 +20,7 @@ const CategoryCard = () => {
             {
                 categories.map((card) => (
                     <div onClick={() => handleClick(card.name)} className=" md:w-70 card shadow-md">
-                        <figure className='md:w-70 h-35 rounded-lg object-cover'>
+                        <figure className='md:w-70 h-35 rounded-lg object-cover hover:scale-105 transition-transform'>
                             <img className=' rounded-md'
                                 src={card.image}
                                 alt="Shoes" />

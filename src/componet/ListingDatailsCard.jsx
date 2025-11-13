@@ -11,9 +11,9 @@ const ListingDatailsCard = () => {
         <div>
 
             <div className="grid grid-cols-1 md:grid-cols-2  gap-14 mt-10 md:mt-10 rounded-lg bg-base-100 h-[700px] md:mb-0 mb-4 md:p-0 p-4 md:h-[350px] w-[320px] md:w-[650px] mx-auto shadow-sm">
-                <figure >
+                <figure className="hover:scale-105 transition-transform" >
                     <img
-                        className=' h-[300px] md:h-[300px] p- rounded-lg w-[300px] md:w-[300px]' src={model.image}
+                        className=' h-[300px] md:h-[300px] p- rounded-lg w-[300px] md:w-[300px] ' src={model.image}
                         alt="Shoes" />
                 </figure>
                 <div className=" ">

@@ -15,8 +15,8 @@ const FilteredProductPage = () => {
     <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
       {
         products.map((item) => (
-          <div className="card bg-base-100 w-85 mt-8 shadow-sm">
-            <figure className='w-85 h-60 object-cover'>
+          <div className="card bg-base-100 w-85 mt-8 shadow-sm ">
+            <figure className='w-85 h-60 object-cover hover:scale-105 transition-transform'>
               <img
                 src={item.image}
                 alt="Shoes" />

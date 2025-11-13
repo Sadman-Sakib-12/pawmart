@@ -10,7 +10,7 @@ const RecentLesting = ({ model }) => {
   }
   return (
     <div className="card bg-base-100 w-80 md:w-96 shadow-sm mt-10">
-      <figure className='w-70 h-60  object-cover'>
+      <figure className='w-70 h-60  object-cover hover:scale-105 transition-transform'>
         <img
           src={image}
           alt="Shoes" />
