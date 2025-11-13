@@ -25,7 +25,7 @@ const FilteredProductPage = () => {
               <h2 className="card-title">{item.name}</h2>
               <p>{item.description}</p>
               <div className="card-actions justify-end">
-                <Link to={`/listing-details/${item._id}`}>See Details</Link>
+                <Link className='btn w-full bg-pink-600 rounded-lg text-white' to={`/listing-details/${item._id}`}>See Details</Link>
               </div>
             </div>
           </div>

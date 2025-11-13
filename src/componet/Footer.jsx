@@ -8,7 +8,7 @@ const Footer = () => {
       <footer className="footer bg-black text-white sm:footer-horizontal h-45  p-10">
 
         <aside className=' gap-5'>
-          <h1 className='text-4xl'>PawMart</h1>
+          <h1 className='text-emerald-700 font-bold text-4xl'>PawMart</h1>
           <p>
             PawMart connects local pet owners <br />and buyers for adoption <br />and pet care products.
           </p>

@@ -30,7 +30,7 @@ const OrderModel = ({ model, setOrder }) => {
             .then(data => {
                 console.log(data)
                 setOrder(false)
-                toast('Succesfull')
+                toast('successful')
             })
             .catch(err => {
                 console.log(err)

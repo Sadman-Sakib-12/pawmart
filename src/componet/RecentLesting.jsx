@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 
 const RecentLesting = ({ model }) => {
-  const { category, date, description, _id, email, image, location, name, price } = model
+  const { category, _id, email, image, location, name, price } = model
   return (
     <div className="card bg-base-100 w-96 shadow-sm mt-15">
       <figure className='w-96 h-60  object-cover'>

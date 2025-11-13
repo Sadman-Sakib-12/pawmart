@@ -1,10 +1,10 @@
-import React, { use } from 'react'
+import React, { use, useContext } from 'react'
 import { NavLink } from 'react-router'
 import { Link } from 'react-router'
 import { AuthContext } from '../context/AuthContext'
 
 const Navbar = () => {
-    const { user, signoutUserFunc } = use(AuthContext)
+    const { user, signoutUserFunc } = useContext(AuthContext)
     return (
         <div className="navbar bg-green-100 shadow-sm">
             <div className="navbar-start">
@@ -34,7 +34,7 @@ const Navbar = () => {
                         )}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">PawMart</a>
+                <a className=" text-emerald-600 font-bold text-4xl">PawMart</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 font-bold">
@@ -86,7 +86,7 @@ const Navbar = () => {
                         </div>
                     ) : (
                         <div className="navbar-end">
-                            <Link className='btn' to='/login'>Login</Link>
+                            <Link className='btn bg-fuchsia-500 hover:bg-lime-500 text-white' to='/login'>Login</Link>
                         </div>
                     )
                 }

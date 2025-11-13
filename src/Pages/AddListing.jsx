@@ -14,7 +14,7 @@ const AddListing = () => {
             price: e.target.price.value,
             description: e.target.description.value,
             date: new Date(),
-            created_by: user.email
+            email: user.email
         }
         fetch('http://localhost:3000/models',{
             method: "POST",
@@ -26,7 +26,7 @@ const AddListing = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
-            toast('succfull')
+            toast('successful')
         })
         .catch(err=>{
             console.log(err)
@@ -38,7 +38,7 @@ const AddListing = () => {
                 <h2 className='text-2xl font-bold text-center mb-6'></h2>
                 <form onSubmit={handleSubmite} className='space-y-4'>
                     <div>
-                        <label className='label font-medium'>Pet Name</label>
+                        <label className='label font-medium'>Name</label>
                         <input
                            type='text'
                             name="name"
@@ -97,12 +97,14 @@ const AddListing = () => {
                               placeholder='https://example.com/image.jpg' alt="" />
                     </div>
 
-                    {/* <div>
-                        <label className='label font-medium'>Date</label>
+                    <div>
+                        <label className='label font-medium'>Email</label>
                         <input 
-                        type=""
-                        name='' className='input w-full rounded-full focus:border-0 focus:outline-gray-200' alt="" />
-                    </div> */}
+                        defaultValue={user.email}
+                        name='email' 
+                        readOnly
+                        className='input w-full rounded-full focus:border-0 focus:outline-gray-200'  />
+                    </div>
 
                     <div>
                         <button

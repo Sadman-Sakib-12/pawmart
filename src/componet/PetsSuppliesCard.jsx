@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 
 const PetsSuppliesCard = ({ model }) => {
-    const { category, date, description, _id, email, image, location, name, price } = model
+    const { category, _id, image, location, name, price } = model
     return (
         <div>
            

@@ -12,6 +12,7 @@ import OrderModel from "../componet/OrderModel";
 import FilteredProductPage from "../Pages/FilteredProductPage";
 import Error from "../Pages/Error";
 import UpdateModel from "../componet/UpdateModel";
+import PrivateRouter from "../Providers/PrivateRouter";
 
 const router = createBrowserRouter([
     {
@@ -30,20 +31,33 @@ const router = createBrowserRouter([
             },
             {
                 path: "/add-listing",
-                element: <AddListing />,
+                element: (
+                    <PrivateRouter>
+                        <AddListing />
+                    </PrivateRouter>
+
+                ),
             },
             {
                 path: "/my-listing",
-                element: <MyListings />,
+                element: (<PrivateRouter>
+                    <MyListings />
+                </PrivateRouter>),
             },
             {
                 path: "/listing-details/:id",
-                element: <ListingDatailsCard />,
+                element: (
+                    <PrivateRouter>
+                        <ListingDatailsCard />
+                    </PrivateRouter>
+                ),
                 loader: ({ params }) => fetch(`http://localhost:3000/models/${params.id}`)
             },
             {
                 path: "/my-orderes",
-                element: <MyOrders />
+                element: (<PrivateRouter>
+                    <MyOrders />
+                </PrivateRouter>)
             },
             {
                 path: "/category-filtered-prduct/:categoryName",
@@ -56,7 +70,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/update-model/:id",
-                element: <UpdateModel/>,
+                element: <UpdateModel />,
                 loader: ({ params }) => fetch(`http://localhost:3000/models/${params.id}`),
             },
             {
@@ -69,7 +83,7 @@ const router = createBrowserRouter([
             },
         ]
     },
-      {
+    {
         path: "*",
         element: <Error />
     }

@@ -10,7 +10,7 @@ const MainLoyouts = () => {
         <Navbar/>
         <main className='min-h-[calc(100vh-178px)]'> 
             <Outlet/>
-            <Toaster/>
+            <Toaster position='top-right'/>
         </main>
         <Footer/>
     </div>
