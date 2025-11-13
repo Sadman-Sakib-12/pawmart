@@ -3,11 +3,12 @@ import { Link, useNavigate } from 'react-router'
 import imgag from '../assets/image.png'
 import imgag2 from '../assets/image.jpg'
 import imgag3 from '../assets/image.webp'
+import imgag4 from '../assets/image2.webp'
 const categories = [
     { name: "Pets", image: imgag },
     { name: "Pet Food", image: imgag2 },
-    { name: "Accessories", image: imgag3 },
-    { name: "Pet Care Products", image: imgag }
+    { name: "Accessories", image: imgag4 },
+    { name: "Pet Care Products", image: imgag3 }
 ]
 const CategoryCard = () => {
     const navigate = useNavigate()

@@ -10,6 +10,7 @@ const ListingDatailsCard = () => {
     const [order, setOrder] = useState(false)
     return (
         <div>
+
             <div className=" flex gap-4 mt-10 rounded-lg bg-base-100 h-[350px] w-[320px] md:w-[650px] mx-auto shadow-sm">
                 <figure >
                     <img
@@ -29,30 +30,22 @@ const ListingDatailsCard = () => {
 
                         </div>
                     </div>
-
-
-                    <div className="mt-10">
-                        <div className=" p-5 justify-end">
-
-                            {/* The button to open modal */}
-                            <a href="#my_modal_8 " onClick={() => setOrder(true)} className=" btn w-full bg-pink-600 rounded-lg text-white">Order Now</a>
-
-
-                            {/* Put this part before </body> tag */}
-                            <div className="modal    w-full " role="dialog" id="my_modal_8">
+                    {
+                        order && (
+                            <dialog open className="modal">
                                 <div className="modal-box">
-                                    {
-                                        order && <OrderModel setOrder={setOrder} model={model} />
-                                    }
+                                    <OrderModel model={model} setOrder={setOrder} />
                                     <div className="modal-action">
-                                        <a href="#" className="btn">Cancel</a>
+                                        <button className="btn " onClick={() => setOrder(false)}>Cancel</button>
                                     </div>
                                 </div>
-                            </div>
+                            </dialog>
+                        )
+                    }
+                    <button className='btn btn-primary' onClick={()=>setOrder(true)}>
+                        order
+                    </button>
 
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>
@@ -60,3 +53,24 @@ const ListingDatailsCard = () => {
 }
 
 export default ListingDatailsCard
+
+{/* <div className="mt-10">
+                        <div className=" p-5 w-full">
+
+
+                            <a href="#my_modal_8 " className=" btn w-full bg-pink-600 rounded-lg text-white">Order Now</a>
+
+
+
+                            <div className="modal    w-full " role="dialog" id="my_modal_8">
+                                <div >
+                                   
+                                    <div  >
+                                        <a href="#" className="btn">Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div> */}

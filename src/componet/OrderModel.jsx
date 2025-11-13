@@ -1,5 +1,6 @@
 import React, { use } from 'react'
 import { AuthContext } from '../context/AuthContext'
+import toast from 'react-hot-toast'
 
 const OrderModel = ({ model, setOrder }) => {
     const { user } = use(AuthContext)
@@ -29,6 +30,7 @@ const OrderModel = ({ model, setOrder }) => {
             .then(data => {
                 console.log(data)
                 setOrder(false)
+                toast('Succesfull')
             })
             .catch(err => {
                 console.log(err)
@@ -109,9 +111,10 @@ const OrderModel = ({ model, setOrder }) => {
                         <div>
                             <button
                                 type='submit'
-                                onClick={''} className='btn w-full  text-white mt-6 rounded-full bg-linear-to-r from-pink-500 to-red-600 hover:from-pink-600 hover:to-red-700'>Confirm Order</button>
+                                className='btn w-full  text-white mt-6 rounded-full bg-linear-to-r from-pink-500 to-red-600 hover:from-pink-600 hover:to-red-700'>Confirm Order</button>
                         </div>
                     </form>
+                  
                 </div>
             </div>
 

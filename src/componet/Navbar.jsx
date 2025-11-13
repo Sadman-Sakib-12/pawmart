@@ -6,7 +6,7 @@ import { AuthContext } from '../context/AuthContext'
 const Navbar = () => {
     const { user, signoutUserFunc } = use(AuthContext)
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-green-100 shadow-sm">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -15,20 +15,20 @@ const Navbar = () => {
                     <ul
                         tabIndex="-1"
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li>  <NavLink to='/'>Home</NavLink></li>
+                        <li>  <NavLink to='/'  className={({ isActive }) => isActive ? "bg-green-700" : "hover:text-emerald-700"}>Home</NavLink></li>
                         <li>
-                            <NavLink to='/pets-supplies'>Pets Supplies</NavLink>
+                            <NavLink to='/pets-supplies'  className={({ isActive }) => isActive ? "bg-green-700" : "hover:text-emerald-700"}>Pets Supplies</NavLink>
                         </li>
                         {user && (
                             <>
                                 <li>
-                                    <NavLink to='/add-listing'>Add Listing</NavLink>
+                                    <NavLink to='/add-listing'  className={({ isActive }) => isActive ? "bg-green-700" : "hover:text-emerald-700"}>Add Listing</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to='/my-listing'>My Listings</NavLink>
+                                    <NavLink to='/my-listing'  className={({ isActive }) => isActive ? "bg-green-700" : "hover:text-emerald-700"}>My Listings</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to='/my-orderes'>My Orders</NavLink>
+                                    <NavLink to='/my-orderes'  className={({ isActive }) => isActive ? "bg-green-700" : "hover:text-emerald-700"}>My Orders</NavLink>
                                 </li>
                             </>
                         )}
@@ -37,21 +37,21 @@ const Navbar = () => {
                 <a className="btn btn-ghost text-xl">PawMart</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    <li><NavLink to='/'>Home</NavLink></li>
+                <ul className="menu menu-horizontal px-1 font-bold">
+                    <li><NavLink to='/'  className={({ isActive }) => isActive ? "bg-green-700" : "hover:text-emerald-700"}>Home</NavLink></li>
                     <li>
-                        <NavLink to='/pets-supplies'>Pets Supplies</NavLink>
+                        <NavLink to='/pets-supplies'  className={({ isActive }) => isActive ? "bg-green-700" : "hover:text-emerald-700"}>Pets Supplies</NavLink>
                     </li>
                     {user && (
                         <>
                             <li>
-                                <NavLink to='/add-listing'>Add Listing</NavLink>
+                                <NavLink to='/add-listing'  className={({ isActive }) => isActive ? "bg-green-700" : "hover:text-emerald-700"}>Add Listing</NavLink>
                             </li>
                             <li>
-                                <NavLink to='/my-listing'>My Listings</NavLink>
+                                <NavLink to='/my-listing'  className={({ isActive }) => isActive ? "bg-green-700" : "hover:text-emerald-700"}>My Listings</NavLink>
                             </li>
-                            <li>
-                                <NavLink to='/my-orderes'>My Orders</NavLink>
+                            <li className=''>
+                                <NavLink to='/my-orderes'  className={({ isActive }) => isActive ? "bg-green-700" : "hover:text-emerald-700"}>My Orders</NavLink>
                             </li>
                         </>
                     )}

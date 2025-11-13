@@ -11,6 +11,7 @@ import ListingDatailsCard from "../componet/ListingDatailsCard";
 import OrderModel from "../componet/OrderModel";
 import FilteredProductPage from "../Pages/FilteredProductPage";
 import Error from "../Pages/Error";
+import UpdateModel from "../componet/UpdateModel";
 
 const router = createBrowserRouter([
     {
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
             {
                 path: "/my-orderes/:id",
                 element: <OrderModel />,
+                loader: ({ params }) => fetch(`http://localhost:3000/models/${params.id}`),
+            },
+            {
+                path: "/update-model/:id",
+                element: <UpdateModel/>,
                 loader: ({ params }) => fetch(`http://localhost:3000/models/${params.id}`),
             },
             {
