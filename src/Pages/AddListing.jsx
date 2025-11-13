@@ -16,7 +16,7 @@ const AddListing = () => {
             date: new Date(),
             email: user.email
         }
-        fetch('http://localhost:3000/models',{
+        fetch('https://pawmart-server-gray.vercel.app/models',{
             method: "POST",
             headers:{
                 "Content-Type":"application/json"
@@ -33,7 +33,7 @@ const AddListing = () => {
         })
     }
     return (
-        <div className='card border mt-6 mb-8 border-gray-200 bg-base-100 w-full   max-w-md mx-auto shadow-2xl rounded-2xl'>
+        <div className='card border mt-6 mb-8 p- border-gray-200 bg-base-100 w-full   max-w-md mx-auto shadow-2xl rounded-2xl'>
             <div className='card-body p-6 relative'>
                 <h2 className='text-2xl font-bold text-center mb-6'></h2>
                 <form onSubmit={handleSubmite} className='space-y-4'>

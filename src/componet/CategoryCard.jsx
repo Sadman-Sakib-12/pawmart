@@ -15,13 +15,12 @@ const CategoryCard = () => {
     const handleClick = (categoryname) => {
         navigate(`/category-filtered-prduct/${categoryname}`)
     }
-    //  const { category, date, description,_id, email, image, location, name, price } = model
     return (
-        <div className='grid grid-cols-4 gap-2 mt-10'>
+        <div className='grid grid-cols-1 md:grid-cols-4 p-3 gap-4 mt-10'>
             {
                 categories.map((card) => (
-                    <div onClick={() => handleClick(card.name)} className="w-73 card shadow-md">
-                        <figure className='w-73 h-35 rounded-lg object-cover'>
+                    <div onClick={() => handleClick(card.name)} className=" md:w-70 card shadow-md">
+                        <figure className='md:w-70 h-35 rounded-lg object-cover'>
                             <img className=' rounded-md'
                                 src={card.image}
                                 alt="Shoes" />

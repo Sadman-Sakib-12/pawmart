@@ -5,15 +5,15 @@ import Swal from 'sweetalert2'
 
 const MyListings = () => {
   const { user } = use(AuthContext)
-  const navigate = useNavigate()
-  const { id } = useParams()
+  // const navigate = useNavigate()
+  // const { id } = useParams()
   const [listing, setListing] = useState([])
   // const [modal, setModal] = useState({})
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if (!user?.email) return
-    fetch(`http://localhost:3000/my-lisiting?email=${user.email}`)
+    fetch(`https://pawmart-server-gray.vercel.app/my-lisiting?email=${user.email}`)
       .then(res => res.json())
       .then(data => {
         setListing(data.result)
@@ -34,7 +34,7 @@ const MyListings = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/models/${id}`, {
+        fetch(`https://pawmart-server-gray.vercel.app/models/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json"
@@ -48,7 +48,7 @@ const MyListings = () => {
               text: "Your file has been deleted.",
               icon: "success"
             });
-            fetch(`http://localhost:3000/my-lisiting?email=${user.email}`)
+            fetch(`https://pawmart-server-gray.vercel.app/my-lisiting?email=${user.email}`)
               .then(res => res.json())
               .then(data => {
                 setListing(data.result)
@@ -62,11 +62,11 @@ const MyListings = () => {
     });
   }
   return (
-    <div>
+    <div >
       <h1 className='mt-6 font-bold text-4xl text-center '>My <span className='text-indigo-700 '>Listings</span></h1>
-      <div className='mt-5 p-2 border'>
-        <table className='min-w-full'>
-          <thead className='w-50 shadow-md bg-gray-200'>
+      <div className='mt-5  overflow-x-auto border'>
+        <table className='min-w-full border-collapse'>
+          <thead className=' shadow-md bg-gray-200'>
             <tr className=' text-left'>
               <th className='px-4 py-2 '>Name</th>
               <th className='px-4 py-2 '>Category</th>
@@ -76,7 +76,7 @@ const MyListings = () => {
             </tr>
           </thead>
 
-          <tbody>
+          <tbody >
             {listing.map(model => (
               <tr>
                 <td className='px-4 py-2 font-bold'>{model.name}</td>
@@ -86,7 +86,7 @@ const MyListings = () => {
 
                 <td className=''>
                   <Link to={`/update-model/${model._id}`} className='btn gap-4 border-indigo-700 mr-4 mt-2 hover:text-white hover:bg-indigo-700 '>Update</Link>
-                  <button onClick={() => handleDelte(model._id)} className='btn'>Delete</button>
+                  <button onClick={() => handleDelte(model._id)} className='btn border-red-400 mr-4 mt-2 hover:text-white hover:bg-green-700'>Delete</button>
                 </td>
 
 

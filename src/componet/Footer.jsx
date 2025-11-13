@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className=''>
 
-      <footer className="footer bg-black text-white sm:footer-horizontal h-45  p-10">
+      <footer className="footer p-4 bg-black  text-white sm:footer-horizontal md:h-45  md:p-10">
 
         <aside className=' gap-5'>
           <h1 className='text-emerald-700 font-bold text-4xl'>PawMart</h1>
@@ -13,14 +13,12 @@ const Footer = () => {
             PawMart connects local pet owners <br />and buyers for adoption <br />and pet care products.
           </p>
         </aside>
-        <nav className='ml-98 text-center'>
+        <nav className='md:ml-98 text-center'>
           <h6 className="footer-title to-white">Useful Links</h6>
           <Link className="link link-hover">Home</Link>
           <Link className="link link-hover">Contact</Link>
           <Link className="link link-hover">Terms</Link>
         </nav>
-
-
       </footer>
       <footer className="footer bg-black sm:footer-horizontal footer-center text-white p-4">
         <aside>

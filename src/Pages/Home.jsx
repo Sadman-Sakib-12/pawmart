@@ -13,16 +13,16 @@ const Home = () => {
     <div>
       <Banner />
       <CategoryCard/> 
-      <div className='grid grid-cols-3 gap-3'>
+      <div className='grid grid-cols-1 p-4 md:p-0 md:grid-cols-3 gap-2'>
         {
           data.map((model)=><RecentLesting model={model}/>)
         }
       </div>
       <div className='mt-10'> 
-        <h1 className='text-center text-3xl  font-bold mt-5'>Why Adopt from PawMart?</h1>
-        <div className='mt-8 mb-6 grid grid-cols-3 gap-2'>
-          <div className='card bg-base-100  h-100 w-96 shadow-sm'>
-            <div className='w-96 h-60 p-2 object-cover'>
+        <h1 className='text-center mktext-3xl  font-bold mt-5'>Why Adopt from PawMart?</h1>
+        <div className='mt-8 mb-6 grid grid-cols-1 md:p-0 p-5 md:grid-cols-3 gap-2'>
+          <div className='card bg-base-100  h-100 w-80 md:w-96 shadow-sm'>
+            <div className='w-80 md:w-96 h-50 md:h-60 p-2 object-cover'>
               <img className=' rounded-xl' src={image1} alt="" />
             </div>
             <div className='p-2 space-y-2'>
@@ -33,8 +33,8 @@ const Home = () => {
             </div>
           </div>
 
-          <div className='card bg-base-100 h-100 w-96 shadow-sm'>
-            <div className='w-96 h-60 p-2 object-cover'>
+          <div className='card bg-base-100 h-100 w-80 md:w-96  shadow-sm'>
+            <div className='w-80 md:w-96 h-50 md:h-60 p-2 object-cover'>
               <img className=' rounded-xl' src={image2} alt="" />
             </div>
             <div className='p-2 space-y-2'>
@@ -45,8 +45,8 @@ const Home = () => {
             </div>
           </div>
 
-          <div className='card bg-base-100 h-100 w-96 shadow-sm'>
-            <div className='w-96 h-60 p-2 object-cover'>
+          <div className='card bg-base-100 h-100 w-80 md:w-96  shadow-sm'>
+            <div className='w-80 md:w-96 h-50 md:h-60 p-2 object-cover'>
               <img className=' rounded-xl' src={image3} alt="" />
             </div>
             <div className='p-2 space-y-2'>

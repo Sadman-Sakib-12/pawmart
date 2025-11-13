@@ -22,12 +22,12 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home />,
-                loader: () => fetch('http://localhost:3000/latest-models')
+                loader: () => fetch('https://pawmart-server-gray.vercel.app/latest-models')
             },
             {
                 path: "/pets-supplies",
                 element: <PetsSupplies />,
-                loader: () => fetch('http://localhost:3000/models')
+                loader: () => fetch('https://pawmart-server-gray.vercel.app/models')
             },
             {
                 path: "/add-listing",
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
                         <ListingDatailsCard />
                     </PrivateRouter>
                 ),
-                loader: ({ params }) => fetch(`http://localhost:3000/models/${params.id}`)
+                loader: ({ params }) => fetch(`https://pawmart-server-gray.vercel.app/models/${params.id}`)
             },
             {
                 path: "/my-orderes",
@@ -66,12 +66,12 @@ const router = createBrowserRouter([
             {
                 path: "/my-orderes/:id",
                 element: <OrderModel />,
-                loader: ({ params }) => fetch(`http://localhost:3000/models/${params.id}`),
+                loader: ({ params }) => fetch(`https://pawmart-server-gray.vercel.app/models/${params.id}`),
             },
             {
                 path: "/update-model/:id",
                 element: <UpdateModel />,
-                loader: ({ params }) => fetch(`http://localhost:3000/models/${params.id}`),
+                loader: ({ params }) => fetch(`https://pawmart-server-gray.vercel.app/models/${params.id}`),
             },
             {
                 path: "/regiter",

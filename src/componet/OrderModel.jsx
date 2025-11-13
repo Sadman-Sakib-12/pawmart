@@ -19,7 +19,7 @@ const OrderModel = ({ model, setOrder }) => {
             note: e.target.note.value,
             quantity: e.target.quantity.value
         }
-        fetch(`http://localhost:3000/order/${model._id}`, {
+        fetch(`https://pawmart-server-gray.vercel.app/order/${model._id}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

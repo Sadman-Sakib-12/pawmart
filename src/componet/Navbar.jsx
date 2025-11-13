@@ -1,10 +1,10 @@
-import React, { use, useContext } from 'react'
+import React, { use } from 'react'
 import { NavLink } from 'react-router'
 import { Link } from 'react-router'
 import { AuthContext } from '../context/AuthContext'
 
 const Navbar = () => {
-    const { user, signoutUserFunc } = useContext(AuthContext)
+    const { user, signoutUserFunc } = use(AuthContext)
     return (
         <div className="navbar bg-green-100 shadow-sm">
             <div className="navbar-start">
@@ -14,7 +14,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[999] mt-3 w-52 p-2 shadow">
                         <li>  <NavLink to='/'  className={({ isActive }) => isActive ? "bg-green-700" : "hover:text-emerald-700"}>Home</NavLink></li>
                         <li>
                             <NavLink to='/pets-supplies'  className={({ isActive }) => isActive ? "bg-green-700" : "hover:text-emerald-700"}>Pets Supplies</NavLink>

@@ -5,14 +5,14 @@ const FilteredProductPage = () => {
   const { categoryName } = useParams()
   const [products, setProducts] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:3000/category-filtered-product/${categoryName}`)
+    fetch(`https://pawmart-server-gray.vercel.app/category-filtered-product/${categoryName}`)
       .then(res => res.json())
       .then(data => {
         setProducts(data.result)
       })
   }, [categoryName])
   return (
-    <div className='grid grid-cols-3 gap-3'>
+    <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
       {
         products.map((item) => (
           <div className="card bg-base-100 w-85 mt-8 shadow-sm">

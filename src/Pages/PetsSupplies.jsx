@@ -14,7 +14,7 @@ const PetsSupplies = () => {
       setModels(data)
       return
     }
-    fetch(`http://localhost:3000/category-filter/${category}`)
+    fetch(`https://pawmart-server-gray.vercel.app/category-filter/${category}`)
       .then(res => res.json())
       .then(data => {
         setModels(data.result)
@@ -39,7 +39,7 @@ const PetsSupplies = () => {
         </select>
       </div>
 
-      <div className='grid grid-cols-3 gap-4 mt-4'>
+      <div className='grid grid-cols-1 p-3 md:grid-cols-3 gap-4 mt-4'>
 
         {
           models.map(model => <PetsSuppliesCard model={model} />)

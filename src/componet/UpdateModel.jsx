@@ -17,7 +17,7 @@ const UpdateModel = () => {
             date: new Date(),
             created_by: user.email
         }
-        fetch(`http://localhost:3000/models/${model._id}`, {
+        fetch(`https://pawmart-server-gray.vercel.app/models/${model._id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

@@ -7,8 +7,8 @@ const PetsSuppliesCard = ({ model }) => {
         <div>
            
 
-            <div className="card bg-base-100 w-96 shadow-sm">
-                <figure className='w-96 h-60 p- object-cover'>
+            <div className="card bg-base-100 w-80 md:w-96 shadow-sm">
+                <figure className='w-80 md:w-96 h-60 p- object-cover'>
                     <img
                         src={image}
                         alt="Shoes" />

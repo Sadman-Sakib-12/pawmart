@@ -9,7 +9,7 @@ const MyOrders = () => {
   const { user } = use(AuthContext)
   useEffect(() => {
     if (!user?.email) return
-    fetch(`http://localhost:3000/my-order?email=${user.email}`, {
+    fetch(`https://pawmart-server-gray.vercel.app/my-order?email=${user.email}`, {
       headers: {
         "Content-Type": "application/json"
       }

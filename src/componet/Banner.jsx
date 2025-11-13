@@ -10,7 +10,7 @@ import image3 from '../assets/service1.jpg'
 
 const Banner = () => {
     return (
-        <Swiper className='rounded h-[400px]'
+        <Swiper className='rounded h-[200px] md:h-[400px]'
             spaceBetween={30}
             centeredSlides={true}
             autoplay={{
@@ -26,7 +26,7 @@ const Banner = () => {
         >
             <SwiperSlide>
                 <div
-                    className="hero h-[400px]"
+                    className="hero h-[200px] md:h-[400px]"
                     style={{
                         backgroundImage: `url(${image1})`,
                     }}
@@ -41,7 +41,7 @@ const Banner = () => {
                 </div>
             </SwiperSlide>
             <SwiperSlide><div
-                className="hero h-[400px] "
+                className="hero h-[200px] md:h-[400px] "
                 style={{
                     backgroundImage: `url(${image2})`
                 }}
@@ -55,7 +55,7 @@ const Banner = () => {
             </div>
             </SwiperSlide>
             <SwiperSlide><div
-                className="hero h-[400px]"
+                className="hero h-[200px] md:h-[400px]"
                 style={{
                     backgroundImage: `url(${image3})`,
                 }}

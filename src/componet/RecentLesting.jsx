@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'react-router'
 
 const RecentLesting = ({ model }) => {
-  const { category, _id, email, image, location, name, price } = model
+  const { category, _id, image, location, name, price } = model
   return (
-    <div className="card bg-base-100 w-96 shadow-sm mt-15">
-      <figure className='w-96 h-60  object-cover'>
+    <div className="card bg-base-100 w-80 md:w-96 shadow-sm mt-10">
+      <figure className='w-70 h-60  object-cover'>
         <img
           src={image}
           alt="Shoes" />
