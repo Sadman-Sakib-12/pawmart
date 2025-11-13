@@ -5,7 +5,6 @@ import {
     signInWithEmailAndPassword,
     signInWithPopup,
     signOut,
-    // updateProfile,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { auth } from "../firebase/firebase.config";
@@ -20,14 +19,6 @@ const AuthProvider = ({ children }) => {
     const createUserWithEmailAndPasswordFunc = (email,password) => {
         return createUserWithEmailAndPassword(auth,email,password)
     }
-
-    // const updateProfileFunc = ({displayName, photoURL}) => {
-    //     return updateProfile(auth.currentUser,{ displayName,photoURL})
-    // }
-    // const sendEmailVerificationFunc=()=>{
-    //     setLoadign(true)
-    //     return sendEmailVerification(auth.currentUser)
-    // }
     const signoutUserFunc = () => {
          setLoadign(true)
         return signOut(auth)
@@ -36,11 +27,6 @@ const AuthProvider = ({ children }) => {
          setLoadign(true)
         return signInWithEmailAndPassword(auth,email,password)
     }
-
-    // const sendPassResetEmailFunc = (email) => {
-    //      setLoadign(true)
-    //     return sendPasswordResetEmail(auth,email)
-    // }
     const signInwithEmailFunc = () => {
          setLoadign(true)
         return signInWithPopup(auth, googleProvider)
@@ -49,11 +35,8 @@ const AuthProvider = ({ children }) => {
         user,
         setUser,
         createUserWithEmailAndPasswordFunc,
-        // updateProfileFunc,
         signoutUserFunc,
         signInWithEmailAndPasswordFunc,
-        // sendEmailVerificationFunc,
-        // sendPassResetEmailFunc,
         signInwithEmailFunc,
         loading,
         setLoadign,

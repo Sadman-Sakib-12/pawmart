@@ -36,7 +36,7 @@ const Login = () => {
     signInWithEmailAndPasswordFunc(email, password)
       .then((res) => {
         setUser(res.user)
-        toast.success("signin successful")
+        toast.success("Login successful")
         navigate("/")
       })
       .catch((e) => {
@@ -49,7 +49,7 @@ const Login = () => {
       .then((res) => {
         setUser(res.user)
         navigate(from)
-        toast.success('signin successful')
+        toast.success('Login successful')
       })
       .catch((e) => {
         toast.error(e.message)

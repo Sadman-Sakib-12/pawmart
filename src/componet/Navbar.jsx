@@ -1,10 +1,19 @@
-import React, { use } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import { NavLink } from 'react-router'
 import { Link } from 'react-router'
 import { AuthContext } from '../context/AuthContext'
 
 const Navbar = () => {
     const { user, signoutUserFunc } = use(AuthContext)
+    const [theme,setTheme]=useState(localStorage.getItem('theme'))|| "light"
+    useEffect(()=>{
+        const html=document.querySelector('html')
+        html.setAttribute('data-theme',theme)
+        localStorage.setItem('theme',theme)
+    },[theme])
+    const handleTheme=(checked)=>{
+        setTheme(checked?"dark":"light")
+    }
     return (
         <div className="navbar bg-green-100 shadow-sm">
             <div className="navbar-start">
@@ -90,6 +99,12 @@ const Navbar = () => {
                         </div>
                     )
                 }
+                <input 
+                onChange={(e)=>handleTheme(e.target.checked)}
+                 type="checkbox"
+                 defaultValue={localStorage.getItem('theme')==="dark"}
+                 className='toggle'
+                 />
             </div>
         </div>
     )

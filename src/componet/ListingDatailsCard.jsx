@@ -6,7 +6,6 @@ import OrderModel from "./OrderModel"
 const ListingDatailsCard = () => {
     const data = useLoaderData()
     const model = data.result
-    // const { user } = use(AuthContext)
     const [order, setOrder] = useState(false)
     return (
         <div>

@@ -5,10 +5,7 @@ import Swal from 'sweetalert2'
 
 const MyListings = () => {
   const { user } = use(AuthContext)
-  // const navigate = useNavigate()
-  // const { id } = useParams()
   const [listing, setListing] = useState([])
-  // const [modal, setModal] = useState({})
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -42,7 +39,6 @@ const MyListings = () => {
         }).then(res => res.json())
           .then(data => {
             console.log(data)
-            // navigate('/models')
             Swal.fire({
               title: "Deleted!",
               text: "Your file has been deleted.",

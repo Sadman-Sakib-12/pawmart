@@ -37,7 +37,7 @@ const Register = () => {
       updateProfileFunc({ displayName, photoURL })
         .then(() => {
           signoutUserFunc().then(() => {
-            toast.success('signup successful')
+            toast.success('Register Successful')
             setUser(user)
             navigate('/login')
           })
@@ -55,7 +55,7 @@ const Register = () => {
       .then((res) => {
         setUser(res.user)
         navigate(from)
-        toast.success('signin successful')
+        toast.success('Login successful')
       })
       .catch((e) => {
         toast.error(e.message)
