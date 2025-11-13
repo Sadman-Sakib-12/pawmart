@@ -13,11 +13,13 @@ import FilteredProductPage from "../Pages/FilteredProductPage";
 import Error from "../Pages/Error";
 import UpdateModel from "../componet/UpdateModel";
 import PrivateRouter from "../Providers/PrivateRouter";
+import Loading from "../Pages/Loading";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLoyouts />,
+        hydrateFallbackElement:<Loading/>,
         children: [
             {
                 path: "/",

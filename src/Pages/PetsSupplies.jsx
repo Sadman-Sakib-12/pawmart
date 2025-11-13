@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import PetsSuppliesCard from '../componet/PetsSuppliesCard'
 import { useLoaderData } from 'react-router'
+import Loading from './Loading'
 
 const PetsSupplies = () => {
   const data = useLoaderData()
   console.log(data)
   const [models, setModels] = useState(data)
   const [select, setSelect] = useState('')
+  const [loading, setLoading] = useState(true)
   const handleSearch = (e) => {
     const category = e.target.value
     setSelect(category)
@@ -18,7 +20,11 @@ const PetsSupplies = () => {
       .then(res => res.json())
       .then(data => {
         setModels(data.result)
+        setLoading(false)
       })
+  }
+  if (!loading) {
+    return <Loading />
   }
   return (
     <div>

@@ -1,8 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router'
+import Loading from '../Pages/Loading'
 
 const RecentLesting = ({ model }) => {
-  const { category, _id, image, location, name, price } = model
+
+  const { category, _id,loading,image, location, name, price } = model
+  if (loading) {
+    return <Loading />
+  }
   return (
     <div className="card bg-base-100 w-80 md:w-96 shadow-sm mt-10">
       <figure className='w-70 h-60  object-cover'>
