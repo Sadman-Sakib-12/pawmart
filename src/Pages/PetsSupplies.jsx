@@ -8,7 +8,7 @@ const PetsSupplies = () => {
   console.log(data)
   const [models, setModels] = useState(data)
   const [select, setSelect] = useState('')
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const handleSearch = (e) => {
     const category = e.target.value
     setSelect(category)
@@ -23,7 +23,7 @@ const PetsSupplies = () => {
         setLoading(false)
       })
   }
-  if (!loading) {
+  if (loading) {
     return <Loading />
   }
   return (
