@@ -28,7 +28,7 @@ const Navbar = () => {
                         <li>
                             <NavLink to='/pets-supplies' className={({ isActive }) => isActive ? "bg-green-700" : "hover:text-emerald-700"}>Pets Supplies</NavLink>
                         </li>
-                        {!user && (
+                        {user && (
                             <>
                                 <li>
                                     <NavLink to='/add-listing' className={({ isActive }) => isActive ? "bg-green-700" : "hover:text-emerald-700"}>Add Listing</NavLink>
@@ -43,7 +43,7 @@ const Navbar = () => {
                         )}
                     </ul>
                 </div>
-                <a className=" text-emerald-600 font-bold text-4xl">PawMart</a>
+                <a className=" text-emerald-600 font-bold text-xl">PawMart</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 font-bold">
@@ -98,9 +98,6 @@ const Navbar = () => {
                             <Link className='btn bg-fuchsia-500 hover:bg-lime-500 text-white' to='/login'>Login</Link>
                         </div>
                     )
-
-
-
 
                 }
 
