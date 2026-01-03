@@ -3,10 +3,7 @@ import MainLoyouts from "../Layouts/MainLoyouts";
 import Home from "../Pages/Home";
 import Register from "../Pages/Register";
 import Login from "../Pages/Login";
-import AddListing from "../Pages/AddListing";
 import PetsSupplies from "../Pages/PetsSupplies";
-import MyListings from "../Pages/MyListings";
-import MyOrders from "../Pages/MyOrders";
 import ListingDatailsCard from "../componet/ListingDatailsCard";
 import OrderModel from "../componet/OrderModel";
 import FilteredProductPage from "../Pages/FilteredProductPage";
@@ -14,12 +11,24 @@ import Error from "../Pages/Error";
 import UpdateModel from "../componet/UpdateModel";
 import PrivateRouter from "../Providers/PrivateRouter";
 import Loading from "../Pages/Loading";
+import DashboardLayout from "../Layouts/DashbordLayouts";
+import Overview from "../Pages/Dashboard/common/Overview";
+import About from "../componet/About";
+import Blog from "../componet/Blog";
+import Support from "../componet/Support";
+import MyListings from "../Pages/Dashboard/user/MyListings";
+import AddListing from "../Pages/Dashboard/user/AddListing";
+import MyOrders from "../Pages/Dashboard/user/MyOrders";
+import ManageUsers from "../Pages/Dashboard/admin/ManageUser";
+import AllProducts from "../Pages/Dashboard/admin/AllProducts";
+import SalesAnalytics from "../Pages/Dashboard/admin/SalesAnalytics";
+import ProfileSettings from "../Pages/Dashboard/common/ProfileSettings";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLoyouts />,
-        hydrateFallbackElement:<Loading/>,
+        hydrateFallbackElement: <Loading />,
         children: [
             {
                 path: "/",
@@ -28,23 +37,10 @@ const router = createBrowserRouter([
             },
             {
                 path: "/pets-supplies",
-                element: <PetsSupplies />,
-                loader: () => fetch('https://pawmart-server-gray.vercel.app/models')
-            },
-            {
-                path: "/add-listing",
-                element: (
-                    <PrivateRouter>
-                        <AddListing />
-                    </PrivateRouter>
-
-                ),
-            },
-            {
-                path: "/my-listing",
                 element: (<PrivateRouter>
-                    <MyListings />
+                    <PetsSupplies />
                 </PrivateRouter>),
+                loader: () => fetch('https://pawmart-server-gray.vercel.app/models')
             },
             {
                 path: "/listing-details/:id",
@@ -55,15 +51,12 @@ const router = createBrowserRouter([
                 ),
                 loader: ({ params }) => fetch(`https://pawmart-server-gray.vercel.app/models/${params.id}`)
             },
-            {
-                path: "/my-orderes",
-                element: (<PrivateRouter>
-                    <MyOrders />
-                </PrivateRouter>)
-            },
+
             {
                 path: "/category-filtered-prduct/:categoryName",
-                element: <FilteredProductPage />
+                element: (<PrivateRouter>
+                    <FilteredProductPage />
+                </PrivateRouter>)
             },
             {
                 path: "/my-orderes/:id",
@@ -71,9 +64,16 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://pawmart-server-gray.vercel.app/models/${params.id}`),
             },
             {
-                path: "/update-model/:id",
-                element: <UpdateModel />,
-                loader: ({ params }) => fetch(`https://pawmart-server-gray.vercel.app/models/${params.id}`),
+                path: 'about',
+                element: <About />
+            },
+            {
+                path: 'blog',
+                element: <Blog />
+            },
+            {
+                path: 'support',
+                element: <Support />
             },
             {
                 path: "/regiter",
@@ -84,6 +84,85 @@ const router = createBrowserRouter([
                 element: <Login />
             },
         ]
+    },
+    {
+        path: '/dashboard',
+        element: (
+            <PrivateRouter>
+                <DashboardLayout />
+            </PrivateRouter>
+
+        ),
+        children: [
+            {
+                index: true,
+                element: <Overview />
+            },
+            {
+                path: "overview",
+                element: (
+                    <PrivateRouter>
+                        <Overview />
+                    </PrivateRouter>
+
+                )
+            },
+            {
+                path: "update-model/:id",
+                element: (<PrivateRouter>
+                    <UpdateModel />
+                </PrivateRouter>
+                ),
+                loader: ({ params }) => fetch(`https://pawmart-server-gray.vercel.app/models/${params.id}`),
+            },
+            {
+                path: "my-listing",
+                element: (<PrivateRouter>
+                    <MyListings />
+                </PrivateRouter>),
+            },
+            {
+                path: "add-listing",
+                element: (
+                    <PrivateRouter>
+                        <AddListing />
+                    </PrivateRouter>
+
+                ),
+            },
+            {
+                path: "my-orderes",
+                element: (<PrivateRouter>
+                    <MyOrders />
+                </PrivateRouter>)
+            },
+            {
+                path: "manageuser",
+                element: (<PrivateRouter>
+                    <ManageUsers />
+                </PrivateRouter>)
+            },
+            {
+                path: "allproducts",
+                element: (<PrivateRouter>
+                    <AllProducts />
+                </PrivateRouter>)
+            },
+            {
+                path: "salesanalytics",
+                element: (<PrivateRouter>
+                    <SalesAnalytics />
+                </PrivateRouter>)
+            },
+            {
+                path: "profilesettings",
+                element: (<PrivateRouter>
+                    <ProfileSettings />
+                </PrivateRouter>)
+
+            },
+        ]
+
     },
     {
         path: "*",

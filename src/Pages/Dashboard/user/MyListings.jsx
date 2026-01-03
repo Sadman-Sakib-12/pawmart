@@ -1,8 +1,8 @@
 import React, { use, useEffect, useState } from 'react'
-import { AuthContext } from '../context/AuthContext'
+import { AuthContext } from '../../../context/AuthContext'
 import { Link, useNavigate, useParams } from 'react-router'
 import Swal from 'sweetalert2'
-import Loading from './Loading'
+import Loading from '../../Loading'
 
 
 const MyListings = () => {
@@ -82,7 +82,7 @@ const MyListings = () => {
                   <td className='px-4 py-2  font-bold'>{model.price}</td>
                   <td className='px-4 py-2  font-bold '>{model.location}</td>
                   <td className=''>
-                    <Link to={`/update-model/${model._id}`} className='btn gap-4 border-indigo-700 mr-4 mt-2 hover:text-white hover:bg-indigo-700 '>Update</Link>
+                    <Link to={`/dashboard/update-model/${model._id}`} className='btn gap-4 border-indigo-700 mr-4 mt-2 hover:text-white hover:bg-indigo-700 '>Update</Link>
                     <button onClick={() => handleDelte(model._id)} className='btn border-red-400 mr-4 mt-2 hover:text-white hover:bg-green-700'>Delete</button>
                   </td>
                 </tr>

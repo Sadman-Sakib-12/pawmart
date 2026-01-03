@@ -1,32 +1,61 @@
-import React from 'react'
-import { Link } from 'react-router';
+import React from "react";
+import { Link } from "react-router";
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className=''>
+    <footer className="bg-black text-white">
 
-      <footer className="footer p-4 bg-black  text-white sm:footer-horizontal md:h-45  md:p-10">
+      <div className="max-w-7xl mx-auto px-6 py-12 grid gap-10 md:grid-cols-4">
 
-        <aside className=' gap-5'>
-          <h1 className='text-emerald-700 font-bold text-4xl'>PawMart</h1>
-          <p>
-            PawMart connects local pet owners <br />and buyers for adoption <br />and pet care products.
+        {/* Brand */}
+        <div>
+          <h1 className="text-emerald-500 font-bold text-3xl">PawMart</h1>
+          <p className="mt-3 text-sm text-gray-300">
+            PawMart connects local pet owners and buyers for adoption and pet care products.
           </p>
-        </aside>
-        <nav className='md:ml-98 text-center'>
-          <h6 className="footer-title to-white">Useful Links</h6>
-          <Link className="link link-hover">Home</Link>
-          <Link className="link link-hover">Contact</Link>
-          <Link className="link link-hover">Terms</Link>
-        </nav>
-      </footer>
-      <footer className="footer bg-black sm:footer-horizontal footer-center text-white p-4">
-        <aside>
-          <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
-        </aside>
-      </footer>
-    </div>
-  )
-}
+        </div>
+
+
+        <div>
+          <h6 className="font-semibold mb-3">Useful Links</h6>
+          <ul className="space-y-2 text-sm text-gray-300">
+            <li><Link to="/" className="hover:text-emerald-400">Home</Link></li>
+            <li><Link to="/about" className="hover:text-emerald-400">About</Link></li>
+            <li><Link to="/blogs" className="hover:text-emerald-400">Blog</Link></li>
+            <li><Link to="/support" className="hover:text-emerald-400">Help & Support</Link></li>
+          </ul>
+        </div>
+
+
+        <div>
+          <h6 className="font-semibold mb-3">Legal</h6>
+          <ul className="space-y-2 text-sm text-gray-300">
+            <li><Link to="/privacy" className="hover:text-emerald-400">Privacy Policy</Link></li>
+            <li><Link to="/terms" className="hover:text-emerald-400">Terms & Conditions</Link></li>
+          </ul>
+        </div>
+
+
+        <div>
+          <h6 className="font-semibold mb-3">Contact</h6>
+          <p className="text-sm text-gray-300">Email: support@pawmart.com</p>
+          <p className="text-sm text-gray-300">Phone: +880 13XXXXXXXX</p>
+
+          <div className="flex gap-4 mt-4 text-xl">
+            <a href="#" className="hover:text-emerald-400"><FaFacebook /></a>
+            <a href="#" className="hover:text-emerald-400"><FaGithub /></a>
+            <a href="#" className="hover:text-emerald-400"><FaLinkedin /></a>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Footer */}
+      <div className="border-t border-gray-700 py-4 text-center text-sm text-gray-400">
+        © {new Date().getFullYear()} PawMart. All rights reserved.
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;
