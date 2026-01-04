@@ -13,7 +13,7 @@ const ManageUsers = ({ currentUserEmail }) => {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch('http://localhost:3000/users');
+      const res = await fetch('https://pawmart-server-gray.vercel.app/users');
       const data = await res.json();
       setUsers(data);
       setLoading(false);
@@ -25,13 +25,13 @@ const ManageUsers = ({ currentUserEmail }) => {
 
   const handleMakeAdmin = async (userId) => {
     try {
-      const res = await fetch(`http://localhost:3000/users/${userId}`, {
+      const res = await fetch(`https://pawmart-server-gray.vercel.app/users/${userId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ role: 'admin' })
       });
       if (res.ok) {
-        toast.success('User promoted to Admin! 👑');
+        toast.success('User promoted to Admin! ');
         fetchUsers();
       }
     } catch (err) {
@@ -42,7 +42,7 @@ const ManageUsers = ({ currentUserEmail }) => {
   const handleDeleteUser = async (userId) => {
     if (!window.confirm('Are you sure you want to delete this user?')) return;
     try {
-      const res = await fetch(`http://localhost:3000/users/${userId}`, {
+      const res = await fetch(`https://pawmart-server-gray.vercel.app/users/${userId}`, {
         method: 'DELETE'
       });
       if (res.ok) {
@@ -70,7 +70,7 @@ const ManageUsers = ({ currentUserEmail }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-base-200 to-base-100 py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
+
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-5 bg-white/90 backdrop-blur-xl px-10 py-6 rounded-full shadow-2xl mb-8 border border-white/50">
             <FaUserShield className="text-4xl text-primary animate-pulse" />
@@ -156,7 +156,7 @@ const ManageUsers = ({ currentUserEmail }) => {
                               </li>
                             ) : (
                               <>
-                                {/* Make Admin */}
+
                                 {user.role !== 'admin' && (
                                   <li>
                                     <button
@@ -169,7 +169,7 @@ const ManageUsers = ({ currentUserEmail }) => {
                                   </li>
                                 )}
 
-                                {/* Delete */}
+
                                 <li>
                                   <button
                                     onClick={() => handleDeleteUser(user._id)}

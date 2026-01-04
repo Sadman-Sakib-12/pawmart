@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import { NavLink, Link } from "react-router"; 
-import { AuthContext } from "../context/AuthContext";
+import { NavLink, Link } from "react-router";
 import { FaSignOutAlt, FaTachometerAlt, FaMoon, FaSun } from "react-icons/fa";
 import useAuth from "../hooks/useAuth";
 
 const Navbar = () => {
-          const { user, signoutUserFunc } = useAuth()
+    const { user, signoutUserFunc } = useAuth()
     const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
     useEffect(() => {
@@ -14,12 +13,12 @@ const Navbar = () => {
     }, [theme]);
 
     const toggleTheme = () => setTheme(prev => (prev === "light" ? "dark" : "light"));
-   
+
 
     return (
         <div className="navbar bg-base-100 shadow-lg fixed top-0 left-0 right-0 z-50">
 
-         
+
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -28,27 +27,43 @@ const Navbar = () => {
                         </svg>
                     </div>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-4 shadow bg-base-100 rounded-box w-64 gap-1">
-                        <NavLink to="/" className="btn btn-ghost justify-start">Home</NavLink>
-                        <NavLink to="/about" className="btn btn-ghost justify-start">About</NavLink>
-                        <NavLink to="/blog" className="btn btn-ghost justify-start">Blog</NavLink>
-                        <NavLink to="/support" className="btn btn-ghost justify-start">Support</NavLink>
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) =>
+                                `px-4 py-2 rounded-xl transition-all ${isActive ? "bg-primary text-white" : "hover:bg-base-200"}`}
+                        >Home</NavLink>
+                        <NavLink
+                            to="/about"
+                            className={({ isActive }) =>
+                                `px-4 py-2 rounded-xl transition-all ${isActive ? "bg-primary text-white" : "hover:bg-base-200"}`}
+                        >About</NavLink>
+                        <NavLink to="/blog"
+                            className={({ isActive }) =>
+                                `px-4 py-2 rounded-xl transition-all ${isActive ? "bg-primary text-white" : "hover:bg-base-200"}`}>Blog</NavLink>
+                        <NavLink to="/support"
+                            className={({ isActive }) =>
+                                `px-4 py-2 rounded-xl transition-all ${isActive ? "bg-primary text-white" : "hover:bg-base-200"}`}>Support</NavLink>
                         {user && (
                             <>
-                                <NavLink to="/pets-supplies" className="btn btn-ghost justify-start">Pet Supplies</NavLink>
-                                <NavLink to="/dashboard" className="btn btn-primary w-full mt-2"><FaTachometerAlt /> Dashboard</NavLink>
+                                <NavLink to="/pets-supplies"
+                                    className={({ isActive }) =>
+                                        `px-4 py-2 rounded-xl transition-all ${isActive ? "bg-primary text-white" : "hover:bg-base-200"}`}>Pet Supplies</NavLink>
+                                <NavLink to="/dashboard"
+                                    className={({ isActive }) =>
+                                        `px-4 py-2 rounded-xl transition-all ${isActive ? "bg-primary text-white" : "hover:bg-base-200"}`}><FaTachometerAlt /> Dashboard</NavLink>
                             </>
                         )}
                     </ul>
                 </div>
 
-                {/* Logo */}
+
                 <Link to="/" className="btn btn-ghost text-2xl md:text-3xl font-bold text-primary normal-case">
                     PawMart
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-lg font-medium gap-2">
-                    
+
                     <NavLink
                         to="/"
                         className={({ isActive }) =>
@@ -96,7 +111,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-3">
-             
+
                 <label className="swap swap-rotate btn btn-ghost btn-circle">
                     <input type="checkbox" onChange={toggleTheme} checked={theme === "dark"} />
                     <FaSun className="swap-on fill-current w-6 h-6 text-yellow-500" />

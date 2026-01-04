@@ -19,7 +19,7 @@ const AllProducts = () => {
       setProducts(data);
       setLoading(false);
     } catch (err) {
-      toast.error('Failed to load products');
+      toast.error('Failed to load products'); 
       setLoading(false);
     }
   };
@@ -59,11 +59,11 @@ const AllProducts = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-base-200 to-base-100 py-12 px-4">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-5 bg-white/90 backdrop-blur-xl px-10 py-6 rounded-full shadow-2xl mb-8 border border-white/50">
+    <div className="min-h-screen bg-gradient-to-br from-base-200 to-base-100  px-3">
+      <div className=" mx-auto">
+
+        <div className="text-center mb-5">
+          <div className="inline-flex items-center gap-5  py-6 rounded-full  mb-2 border border-white/50">
             <FaBoxOpen className="text-4xl text-primary animate-pulse" />
             <h1 className="text-5xl md:text-6xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               All Products
@@ -90,13 +90,13 @@ const AllProducts = () => {
 
      
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProducts.map((product) => (
               <div
                 key={product._id}
                 className="card bg-base-100 shadow-2xl hover:shadow-primary/30 rounded-3xl overflow-hidden transition-all duration-500 group"
               >
-                {/* Image */}
+
                 <div className="h-64 overflow-hidden">
                   <img
                     src={product.image || 'https://i.ibb.co/0jZJ7Yk/default-avatar.jpg'}
@@ -123,14 +123,8 @@ const AllProducts = () => {
                     </p>
                   </div>
 
-                  {/* Actions */}
+
                   <div className="card-actions mt-6 flex gap-2">
-                    <Link
-                      to={`/listing-details/${product._id}`}
-                      className="btn btn-primary btn-outline flex-1 gap-2"
-                    >
-                      <FaEye /> View
-                    </Link>
                     <button
                       onClick={() => handleDeleteProduct(product._id)}
                       className="btn btn-error btn-outline flex-1 gap-2"

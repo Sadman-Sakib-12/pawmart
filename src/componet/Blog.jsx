@@ -10,9 +10,7 @@ const Blog = () => {
       title: "Top 10 Premium Dog Food Brands for 2026",
       excerpt: "Expert-reviewed list of the best quality dog foods available in Bangladesh. Recommendations based on veterinary nutrition standards and real pet parent feedback...",
       author: "Dr. Sarah Rahman",
-      date: "January 02, 2026",
       category: "Pet Nutrition",
-      readTime: "8 min read",
       image: "https://images.unsplash.com/photo-1548767793-5a4a3e37c9f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       featured: true
     },
@@ -21,9 +19,7 @@ const Blog = () => {
       title: "Understanding Your Cat: 15 Key Behavior Signals",
       excerpt: "What is your cat trying to tell you? Tail movements, ear positions, eye contact — decode feline body language like a pro...",
       author: "Ayesha Khan",
-      date: "December 28, 2025",
       category: "Cat Care",
-      readTime: "6 min read",
       image: "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
     },
     {
@@ -36,16 +32,6 @@ const Blog = () => {
       readTime: "5 min read",
       image: "https://images.unsplash.com/photo-1568640347023-d7c1e3b7e15f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
     },
-    {
-      id: 4,
-      title: "Ultimate Guide to Choosing the Perfect Bird Cage (2026)",
-      excerpt: "Complete buying guide: size, material, bar spacing, and design features for different bird species...",
-      author: "Rahim Hossain",
-      date: "December 15, 2025",
-      category: "Bird Care",
-      readTime: "7 min read",
-      image: "https://images.unsplash.com/photo-1452570053594-1b985d6ea890?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-    }
   ];
 
   const categories = ["Pet Nutrition", "Cat Care", "Dog Training", "Health Tips", "Bird Care", "Fish Aquarium", "Grooming"];
@@ -76,13 +62,12 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Featured Post - Premium Highlight */}
      
 
-      {/* Blog Grid + Sidebar */}
+
       <section className="py-16 md:py-24 px-6">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-12">
-          {/* Main Posts */}
+
           <div className="lg:col-span-2 space-y-12">
             <h2 className="text-4xl font-black text-primary mb-10 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Latest Articles
@@ -98,15 +83,7 @@ const Blog = () => {
                       className="w-full h-64 md:h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                   </div>
-                  <div className="md:col-span-2 p-8">
-                    <div className="flex items-center gap-4 text-sm text-base-content/70 mb-4">
-                      <span className="flex items-center gap-1">
-                        <FaTag /> {post.category}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <FaClock /> {post.readTime}
-                      </span>
-                    </div>
+                  <div className="md:col-span-2 p-8">  
                     <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition">
                       {post.title}
                     </h3>
@@ -123,7 +100,7 @@ const Blog = () => {
                         <span>{post.author}</span>
                         <span className="text-base-content/60">• {post.date}</span>
                       </div>
-                      <Link to={`/blog/${post.id}`} className="btn btn-primary btn-outline btn-sm gap-2">
+                      <Link  className="btn btn-primary btn-outline btn-sm gap-2">
                         Read More <FaArrowRight />
                       </Link>
                     </div>
@@ -133,9 +110,9 @@ const Blog = () => {
             ))}
           </div>
 
-          {/* Sidebar */}
+ 
           <aside className="space-y-8">
-            {/* Search */}
+
             <div className="card bg-base-100 shadow-xl p-6">
               <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
                 <FaSearch /> Search Articles
@@ -152,7 +129,7 @@ const Blog = () => {
               </div>
             </div>
 
-            {/* Categories */}
+    
             <div className="card bg-base-100 shadow-xl p-6">
               <h3 className="text-xl font-bold mb-6">Categories</h3>
               <div className="space-y-3">
@@ -169,7 +146,7 @@ const Blog = () => {
               </div>
             </div>
 
-            {/* Newsletter */}
+  
             <div className="card bg-gradient-to-br from-primary to-secondary text-primary-content shadow-2xl p-8 text-center">
               <FaPaw className="text-5xl mx-auto mb-4 opacity-80" />
               <h3 className="text-2xl font-black mb-4">Weekly Pet Tips!</h3>
@@ -187,7 +164,7 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
+      
       <section className="py-20 bg-gradient-to-r from-primary to-secondary text-primary-content">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-4xl md:text-5xl font-black mb-6">
@@ -196,7 +173,7 @@ const Blog = () => {
           <p className="text-xl opacity-90 mb-10">
             Contact our experts or suggest a topic for our next article
           </p>
-          <Link to="/contact" className="btn btn-lg btn-neutral shadow-2xl text-xl px-12">
+          <Link  className="btn btn-lg btn-neutral shadow-2xl text-xl px-12">
             Write to Us <FaEnvelope className="ml-3" />
           </Link>
         </div>

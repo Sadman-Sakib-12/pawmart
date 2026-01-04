@@ -7,7 +7,7 @@ import {
 import { motion } from 'framer-motion';
 
 const RecentListing = ({ model }) => {
-  const { category, _id, image, location, name, price, rating = 4.8, views = 89 } = model;
+  const { category, _id, image, location, name, price, rating = 4.8,  } = model;
 
   return (
     <motion.div
@@ -31,7 +31,6 @@ const RecentListing = ({ model }) => {
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-          {/* Category Badge */}
           <div className="absolute top-4 left-4">
             <span className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
               <FaTag /> {category}
@@ -43,22 +42,18 @@ const RecentListing = ({ model }) => {
             <button className="btn btn-circle btn-sm btn-primary shadow-lg hover:scale-110">
               <FaHeart className="text-lg text-red-400" />
             </button>
-            <button className="btn btn-circle btn-sm btn-info shadow-lg hover:scale-110">
-              <FaEye className="text-lg" />
-            </button>
           </div>
 
-          {/* Rating Badge */}
+ 
           <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
             <FaStar className="text-yellow-500 fill-current" />
             <span className="font-bold">{rating}</span>
-            <span className="text-sm text-base-content/70">({views} views)</span>
           </div>
         </div>
 
-        {/* Card Body */}
+  
         <div className="card-body p-6">
-          {/* Price - Standout */}
+       
           <div className="flex items-center justify-between mb-4">
             <div className="text-4xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent drop-shadow-md">
               ${price}

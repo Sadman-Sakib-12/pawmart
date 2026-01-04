@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router';
 import {
-    FaMapMarkerAlt, FaTag, FaCalendarAlt, FaUser, FaStar,
-    FaTruck, FaShieldAlt, FaHeart, FaShareAlt, FaPhone, FaArrowRight
+    FaMapMarkerAlt, FaTag,  FaUser, FaStar,
+    FaTruck, FaShieldAlt,  FaShareAlt, FaPhone, FaArrowRight
 } from 'react-icons/fa';
 import OrderModel from "./OrderModel";
 
@@ -11,7 +11,7 @@ const ListingDetailsCard = () => {
     const model = data.result;
 
     const [order, setOrder] = useState(false);
-    const [isFavorite, setIsFavorite] = useState(false);
+ 
 
     return (
         <>
@@ -45,12 +45,7 @@ const ListingDetailsCard = () => {
 
                                
                                 <div className="absolute top-6 right-6 flex flex-col gap-3">
-                                    <button
-                                        onClick={() => setIsFavorite(!isFavorite)}
-                                        className={`btn btn-circle btn-lg shadow-2xl ${isFavorite ? 'bg-red-500 hover:bg-red-600 text-white' : 'bg-white/90 hover:bg-white text-red-500'}`}
-                                    >
-                                        <FaHeart className="text-2xl" />
-                                    </button>
+                                    
                                     <button className="btn btn-circle btn-lg bg-white/90 hover:bg-white shadow-2xl">
                                         <FaShareAlt className="text-2xl text-primary" />
                                     </button>
@@ -76,8 +71,7 @@ const ListingDetailsCard = () => {
                                                 <FaStar className="fill-current" />
                                                 <FaStar className="fill-current" />
                                             </div>
-                                            <span className="text-xl font-bold">4.9</span>
-                                            <span className="text-base-content/60">(128 reviews)</span>
+                                            <span className="text-xl font-bold">4.9</span> 
                                         </div>
                                     </div>
 
@@ -85,18 +79,6 @@ const ListingDetailsCard = () => {
                                         <div className="flex items-center gap-4">
                                             <FaMapMarkerAlt className="text-primary text-2xl" />
                                             <span className="font-medium">{model.location}</span>
-                                        </div>
-                                        <div className="flex items-center gap-4">
-                                            <FaUser className="text-primary text-2xl" />
-                                            <span className="font-medium">Seller: {model.created_by || "Verified Seller"}</span>
-                                        </div>
-                                        <div className="flex items-center gap-4">
-                                            <FaCalendarAlt className="text-primary text-2xl" />
-                                            <span>Posted on {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                                        </div>
-                                        <div className="flex items-center gap-4">
-                                            <FaTruck className="text-success text-2xl" />
-                                            <span className="text-success font-bold">Free Delivery Available</span>
                                         </div>
                                     </div>
 
@@ -117,12 +99,7 @@ const ListingDetailsCard = () => {
                                             Place Order Now
                                             <FaArrowRight className="text-2xl" />
                                         </span>
-                                    </button>
-
-                                    <button className="btn btn-outline btn-lg w-full shadow-xl hover:shadow-primary/30 text-xl font-medium rounded-2xl h-14 flex items-center justify-center gap-4">
-                                        <FaPhone className="text-2xl" />
-                                        Contact Seller
-                                    </button>
+                                    </button>   
                                 </div>
                             </div>
                         </div>

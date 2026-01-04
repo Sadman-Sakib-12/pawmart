@@ -34,26 +34,26 @@ const Register = () => {
 
     setLoading(true);
     try {
-      // 1. Firebase-এ user create
+
       const result = await createUserWithEmailAndPasswordFunc(email.trim().toLowerCase(), password);
       const firebaseUser = result.user;
 
-      // 2. Firebase profile update (name + photo)
+     
       await updateUserProfile({
         displayName: name,
         photoURL: photoURL || 'https://i.ibb.co/0jZJ7Yk/default-avatar.jpg'
       });
 
-      // 3. MongoDB-তে user save করো
+
       const userInfo = {
         name: name.trim(),
         email: email.trim().toLowerCase(),
-        photoURL: photoURL|| 'https://i.ibb.co/0jZJ7Yk/default-avatar.jpg',
+        photoURL: photoURL || 'https://i.ibb.co/0jZJ7Yk/default-avatar.jpg',
         role: 'user',
         createdAt: new Date()
       };
 
-      const response = await fetch('http://localhost:3000/users', {
+      const response = await fetch('https://pawmart-server-gray.vercel.app/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -81,7 +81,6 @@ const Register = () => {
       const result = await signInwithGoogle();
       const googleUser = result.user;
 
-      // MongoDB-তে Google user save (duplicate check সহ)
       const userInfo = {
         name: googleUser.displayName || 'Google User',
         email: googleUser.email,
@@ -110,14 +109,14 @@ const Register = () => {
       <div className="card w-full max-w-md shadow-2xl bg-base-100">
         <div className="card-body p-8">
           <h2 className="text-center text-3xl md:text-4xl font-bold text-primary mb-2">
-            Join PawMart 🐾
+            Join PawMart 
           </h2>
           <p className="text-center text-base-content/70 mb-8">
             Create account to buy or sell pet products
           </p>
 
           <form onSubmit={handleRegister} className="space-y-6">
-            {/* Name */}
+
             <div className="form-control">
               <label className="label"><span className="label-text font-semibold">Full Name</span></label>
               <input
@@ -130,7 +129,7 @@ const Register = () => {
               />
             </div>
 
-            {/* Email */}
+  
             <div className="form-control">
               <label className="label"><span className="label-text font-semibold">Email</span></label>
               <input
@@ -143,9 +142,9 @@ const Register = () => {
               />
             </div>
 
-            {/* Photo URL */}
+
             <div className="form-control">
-              <label className="label"><span className="label-text font-semibold">Photo URL (Optional)</span></label>
+              <label className="label"><span className="label-text font-semibold">Photo URL </span></label>
               <input
                 type="url"
                 placeholder="https://example.com/photo.jpg"
@@ -155,13 +154,13 @@ const Register = () => {
               />
             </div>
 
-            {/* Password */}
+
             <div className="form-control relative">
               <label className="label"><span className="label-text font-semibold">Password</span></label>
               <input
                 type={showPass ? 'text' : 'password'}
                 placeholder="Minimum 6 characters"
-                className={`input input-bordered input-lg w-full pr-12 ${showPasswordError ? 'input-error' : ''}`}
+                className={`input  input-lg w-full pr-12 ${showPasswordError ? 'input-error' : ''}`}
                 value={password}
                 onChange={(e) => {
                   setPassword(e.target.value);
@@ -172,39 +171,13 @@ const Register = () => {
               <button
                 type="button"
                 onClick={() => setShowPass(!showPass)}
-                className="absolute inset-y-0 right-0 flex items-center pr-4 pt-10 text-xl text-base-content/70 hover:text-primary"
+                className="absolute inset-y-4 right-0 flex items-center pr-4 pt-5 text-xl "
               >
                 {showPass ? <FaEyeSlash /> : <FaEye />}
               </button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <button
-                type="button"
-                onClick={() => {
-                  setName('Demo User');
-                  setEmail('demo@pawmart.com');
-                  setPassword('Demo123');
-                  toast.success('Demo User filled!');
-                }}
-                className="btn btn-outline btn-success"
-              >
-                Demo User
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setName('Admin User');
-                  setEmail('admin@pawmart.com');
-                  setPassword('Admin123');
-                  toast.success('Demo Admin filled!');
-                }}
-                className="btn btn-outline btn-warning"
-              >
-                Demo Admin
-              </button>
-            </div>
 
-            {/* Submit */}
+
             <button
               type="submit"
               disabled={loading}

@@ -13,7 +13,7 @@ const useRole = () => {
       setLoading(false);
       return;
     }
-    fetch(`http://localhost:3000/users/${user.email}`)
+    fetch(`https://pawmart-server-gray.vercel.app/users/${user.email}`)
       .then(res => res.json())
       .then(data => {
         setRole(data.role); 

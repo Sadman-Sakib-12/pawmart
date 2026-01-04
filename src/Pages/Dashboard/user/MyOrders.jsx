@@ -116,7 +116,7 @@ const MyOrders = () => {
           </div>
         )}
 
-        {/* Orders Table or Empty State */}
+
         {myorder.length > 0 ? (
           <div className="bg-base-100 rounded-3xl shadow-2xl overflow-hidden">
             <div className="overflow-x-auto">

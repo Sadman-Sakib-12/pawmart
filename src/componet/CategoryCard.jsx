@@ -45,7 +45,7 @@ const CategoryCard = () => {
               className="group cursor-pointer"
             >
               <div className="relative h-96 md:h-[420px] rounded-3xl overflow-hidden shadow-2xl hover:shadow-primary/40 transition-all duration-700 group-hover:-translate-y-4">
-                {/* Image with Overlay */}
+           
                 <div className="absolute inset-0">
                   <img
                     src={category.image}
@@ -55,9 +55,9 @@ const CategoryCard = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-90"></div>
                 </div>
 
-                {/* Content Overlay */}
+              
                 <div className="absolute inset-0 flex flex-col justify-end p-8 text-primary-content">
-                  {/* Category Badge */}
+           
                   <div className="mb-4">
                     <span className={`inline-flex items-center gap-3 bg-gradient-to-r ${category.color} text-white px-6 py-3 rounded-full text-lg font-bold shadow-2xl`}>
                       <FaSearch className="text-xl" />
@@ -65,36 +65,22 @@ const CategoryCard = () => {
                     </span>
                   </div>
 
-                  {/* Title */}
+             
                   <h3 className="text-3xl md:text-4xl font-black mb-4 leading-tight drop-shadow-2xl">
                     {category.name}
                   </h3>
 
-                  {/* CTA */}
                   <div className="flex items-center gap-3 text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <span>Explore Now</span>
                     <FaArrowRight className="text-2xl group-hover:translate-x-3 transition-transform" />
                   </div>
                 </div>
 
-                {/* Hover Border Glow */}
                 <div className={`absolute inset-0 rounded-3xl border-4 border-transparent bg-gradient-to-r ${category.color} opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-700 -z-10`}></div>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-16">
-          <p className="text-xl text-base-content/70 mb-6">
-            Can't find what you're looking for?
-          </p>
-          <Link 
-            to="/pets-supplies" 
-            className="btn btn-lg btn-primary shadow-2xl hover:shadow-primary/50 text-xl px-12 rounded-full bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary border-0"
-          >
-            View All Products <FaArrowRight className="ml-3" />
-          </Link>
-        </div>
+        </div>    
       </div>
     </section>
   );

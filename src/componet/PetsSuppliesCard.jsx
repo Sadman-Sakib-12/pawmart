@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router";
 import {
   FaMapMarkerAlt,
@@ -12,8 +12,10 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Loading from "../Pages/Loading";
 
-const PetsSuppliesCard = ({ model }) => {
+const PetsSuppliesCard = ({ model,loading}) => {
+
   const {
     _id,
     category,
@@ -22,9 +24,9 @@ const PetsSuppliesCard = ({ model }) => {
     name,
     price,
     rating = 4.5,
-    views = 120,
-    posted = "2 days ago",
   } = model || {};
+
+    if (loading) return <Loading />;
 
   return (
     <motion.div
@@ -36,7 +38,7 @@ const PetsSuppliesCard = ({ model }) => {
     >
       <div className="card w-80 md:w-96  h-[480px] bg-base-100 shadow-2xl rounded-3xl overflow-hidden border border-base-200">
 
-        {/* Image Section */}
+
         <div className="relative h-64 overflow-hidden">
           <img
             src={
@@ -47,20 +49,17 @@ const PetsSuppliesCard = ({ model }) => {
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
 
-          {/* Overlay */}
+ 
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-          {/* Actions */}
+       
           <div className="absolute top-4 right-4 flex gap-2">
             <button className="btn btn-circle btn-sm btn-error">
               <FaHeart />
             </button>
-            <button className="btn btn-circle btn-sm btn-info">
-              <FaEye />
-            </button>
           </div>
 
-          {/* Category */}
+        
           <div className="absolute top-4 left-4">
             <span className="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full text-sm font-bold">
               <FaTag />
@@ -68,7 +67,7 @@ const PetsSuppliesCard = ({ model }) => {
             </span>
           </div>
 
-          {/* Stock */}
+  
           <div className="absolute bottom-4 left-4">
             <span className="flex items-center gap-2 bg-success text-white px-3 py-1 rounded-full text-xs font-semibold">
               <FaCheckCircle />
@@ -85,31 +84,20 @@ const PetsSuppliesCard = ({ model }) => {
             <div className="flex items-center gap-1 text-sm">
               <FaStar className="text-yellow-400" />
               {rating}
-              <span className="text-xs text-gray-500">({views})</span>
+            
             </div>
           </div>
 
-    
           <h3 className="text-xl font-bold line-clamp-2 mb-3 group-hover:text-primary">
             {name}
           </h3>
-
         
           <div className="space-y-2 text-sm text-gray-500">
             <p className="flex items-center gap-2">
               <FaMapMarkerAlt className="text-primary" />
               {location}
             </p>
-            <p className="flex items-center gap-2">
-              <FaClock className="text-secondary" />
-              Posted {posted}
-            </p>
-            <p className="flex items-center gap-2">
-              <FaTruck className="text-success" />
-              Free Shipping
-            </p>
           </div>
-
           {/* Button */}
           <div className="mt-auto pt-4">
             <Link

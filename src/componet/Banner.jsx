@@ -39,7 +39,7 @@ const slides = [
 
 const Banner = () => {
   return (
-    <section className="relative pt-5">
+    <section className="relative mt-4 pt-5">
       <Swiper
         className="h-[60vh] md:h-[70vh] rounded-none"
         spaceBetween={0}

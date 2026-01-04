@@ -51,7 +51,7 @@ const Home = () => {
       </div>
      <section className="py-20 md:py-32 px-4 bg-gradient-to-br from-base-200 via-base-100 to-base-200">
       <div className="max-w-7xl mx-auto">
-        {/* Stunning Header */}
+
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-5 bg-white/90 backdrop-blur-2xl px-12 py-6 rounded-full shadow-2xl mb-10 border border-white/60">
             <FaPaw className="text-5xl text-primary animate-pulse" />
@@ -64,7 +64,7 @@ const Home = () => {
           </p>
         </div>
 
-        {/* Premium Reason Cards */}
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {reasons.map((reason, index) => (
             <div key={index} className="group relative">

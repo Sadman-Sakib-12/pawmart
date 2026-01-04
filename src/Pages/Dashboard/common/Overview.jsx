@@ -23,7 +23,7 @@ const Overview = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`http://localhost:3000/overview?mode=${viewMode}`);
+        const res = await fetch(`https://pawmart-server-gray.vercel.app/overview?mode=${viewMode}`);
         const result = await res.json();
         setData(result);
       } catch (err) {
@@ -162,7 +162,7 @@ const Overview = () => {
   );
 };
 
-// Sub-components
+
 const StatCard = ({ title, value, icon, color, bg }) => (
   <div className={`bg-white p-8 rounded-[2.5rem] shadow-lg shadow-slate-200/40 border border-white flex items-center justify-between group hover:-translate-y-1 transition-all duration-300`}>
     <div>

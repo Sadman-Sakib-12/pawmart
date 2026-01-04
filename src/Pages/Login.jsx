@@ -14,14 +14,14 @@ const Login = () => {
     user,
     setUser,
     signInWithEmailAndPasswordFunc,
-    signInwithEmailFunc, 
+    signInwithEmailFunc,
   } = useContext(AuthContext);
 
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
 
-  
+
   useEffect(() => {
     if (user) {
       navigate('/');
@@ -66,14 +66,14 @@ const Login = () => {
 
   const handleDemoUser = () => {
     setEmail('demo@pawmart.com');
-    setPassword('Demo123');
+    setPassword('Demo@1');
     toast.success('Demo User credentials filled!');
   };
 
 
   const handleDemoAdmin = () => {
     setEmail('admin@pawmart.com');
-    setPassword('Admin123');
+    setPassword('Admin@1');
     toast.success('Demo Admin credentials filled!');
   };
 
@@ -81,16 +81,33 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-base-200 px-4 py-12">
       <div className="card w-full max-w-md shadow-2xl bg-base-100">
         <div className="card-body p-8">
-          {/* Title & Subtitle */}
+    
           <h2 className="text-center text-3xl md:text-4xl font-bold text-primary mb-2">
-            Welcome to PawMart 🐾
+            Welcome to PawMart
           </h2>
           <p className="text-center text-base-content/70 mb-8">
-            Log in to buy or sell your favorite pet products
+            Login to buy or sell your favorite pet products
           </p>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6 pt-4 border-t">
+            <button
+              type="button"
+              onClick={handleDemoUser}
+              disabled={loading}
+              className="btn btn-outline btn-success btn-sm"
+            >
+              Demo User
+            </button>
+            <button
+              type="button"
+              onClick={handleDemoAdmin}
+              disabled={loading}
+              className="btn btn-outline btn-warning btn-sm"
+            >
+              Demo Admin
+            </button>
+          </div>
           <form onSubmit={handleLogin} className="space-y-6">
-            {/* Email Field */}
+   
             <div className="form-control">
               <label className="label">
                 <span className="label-text font-semibold">Email</span>
@@ -106,7 +123,7 @@ const Login = () => {
               />
             </div>
 
-            {/* Password Field */}
+ 
             <div className="form-control relative">
               <label className="label">
                 <span className="label-text font-semibold">Password</span>
@@ -122,13 +139,13 @@ const Login = () => {
               <button
                 type="button"
                 onClick={() => setShowPass(!showPass)}
-                className="absolute inset-y-0 right-0 flex items-center pr-4 pt-10 text-xl text-base-content/70 hover:text-primary transition-all duration-200"
+                className="absolute inset-y-0 right-0 flex items-center pr-4 pt-1 text-xl text-base-content/70 hover:text-primary transition-all duration-200"
                 aria-label={showPass ? 'Hide password' : 'Show password'}
               >
                 {showPass ? <FaEyeSlash /> : <FaEye />}
               </button>
 
-              {/* Forgot Password Link */}
+
               <div className="label">
                 <a href="#" className="label-text-alt link link-hover">
                   Forgot password?
@@ -136,7 +153,7 @@ const Login = () => {
               </div>
             </div>
 
-            {/* Submit Button */}
+    
             <button
               type="submit"
               disabled={loading}
@@ -152,10 +169,10 @@ const Login = () => {
               )}
             </button>
 
-            {/* Social Login Divider */}
+
             <div className="divider divider-horizontal">OR</div>
 
-            {/* Google Login Button */}
+
             <button
               type="button"
               onClick={handleGoogleLogin}
@@ -166,32 +183,15 @@ const Login = () => {
               Continue with Google
             </button>
 
-            {/* Demo Credentials Buttons (Assignment Requirement) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6 pt-4 border-t">
-              <button
-                type="button"
-                onClick={handleDemoUser}
-                disabled={loading}
-                className="btn btn-outline btn-success btn-sm"
-              >
-                Demo User
-              </button>
-              <button
-                type="button"
-                onClick={handleDemoAdmin}
-                disabled={loading}
-                className="btn btn-outline btn-warning btn-sm"
-              >
-                Demo Admin
-              </button>
-            </div>
+       
 
-            {/* Register Link */}
+
+  
             <div className="text-center mt-8 pt-4 border-t">
               <p className="text-base-content/80">
                 Don't have an account?{' '}
                 <Link
-                  to="/register"
+                  to="/regiter"
                   className="link link-primary font-bold hover:link-hover"
                 >
                   Register here

@@ -20,7 +20,11 @@ const MyListings = () => {
       })
   }, [user])
   if (loading) {
-    return <Loading />
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <span className="loading loading-spinner loading-lg text-primary"></span>
+      </div>
+    );
   }
   const handleDelte = (id) => {
     Swal.fire({

@@ -12,7 +12,7 @@ const FilteredProductPage = () => {
       })
   }, [categoryName])
   return (
-    <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
+    <div className='grid mt-5 grid-cols-1 md:grid-cols-3 gap-3'>
       {
         products.map((item) => (
           <div className="card bg-base-100 w-85 mt-8 shadow-sm ">

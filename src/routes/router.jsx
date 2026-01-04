@@ -23,6 +23,8 @@ import ManageUsers from "../Pages/Dashboard/admin/ManageUser";
 import AllProducts from "../Pages/Dashboard/admin/AllProducts";
 import SalesAnalytics from "../Pages/Dashboard/admin/SalesAnalytics";
 import ProfileSettings from "../Pages/Dashboard/common/ProfileSettings";
+import PrivacyPolicy from "../componet/PriviacyPolicy";
+import TermsConditions from "../componet/TermsConditions";
 
 const router = createBrowserRouter([
     {
@@ -74,6 +76,14 @@ const router = createBrowserRouter([
             {
                 path: 'support',
                 element: <Support />
+            },
+            {
+                path: 'privacy',
+                element: <PrivacyPolicy/>
+            },
+            {
+                path: 'terms',
+                element: <TermsConditions/>
             },
             {
                 path: "/regiter",

@@ -81,7 +81,7 @@ const Support = () => {
             Reach Us Anytime
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Phone Support */}
+     
             <div className="card bg-gradient-to-br from-primary to-secondary text-primary-content shadow-2xl hover:shadow-primary/50 transition">
               <div className="card-body text-center p-10">
                 <FaPhone className="text-5xl mx-auto mb-6" />
@@ -97,24 +97,6 @@ const Support = () => {
               </div>
             </div>
 
-            {/* Live Chat Options */}
-            <div className="card bg-base-100 shadow-2xl">
-              <div className="card-body text-center p-10">
-                <FaHeadset className="text-5xl text-primary mx-auto mb-6" />
-                <h3 className="text-2xl font-bold mb-4">Live Chat</h3>
-                <p className="text-base-content/80 mb-8">Instant help from our support team</p>
-                <div className="space-y-4">
-                  <a href="#" className="btn btn-success btn-lg w-full gap-3 shadow-xl">
-                    <FaWhatsapp className="text-2xl" /> WhatsApp
-                  </a>
-                  <a href="#" className="btn btn-info btn-lg w-full gap-3 shadow-xl">
-                    <FaFacebookMessenger className="text-2xl" /> Messenger
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Email Support */}
             <div className="card bg-gradient-to-br from-secondary to-accent text-primary-content shadow-2xl hover:shadow-accent/50 transition">
               <div className="card-body text-center p-10">
                 <FaEnvelope className="text-5xl mx-auto mb-6" />
@@ -130,7 +112,7 @@ const Support = () => {
         </div>
       </section>
 
-      {/* FAQ Section - Accordion Style */}
+
       <section id="faq" className="py-16 md:py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-black text-center mb-12 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -157,10 +139,10 @@ const Support = () => {
         </div>
       </section>
 
-      {/* Contact Form + Office Info */}
+ 
       <section id="contact-form" className="py-20 bg-base-100">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
+
           <div className="card bg-base-200 shadow-2xl">
             <div className="card-body p-10">
               <h3 className="text-3xl font-black mb-8 text-primary">Send Us a Message</h3>

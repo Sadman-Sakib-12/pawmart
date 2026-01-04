@@ -6,7 +6,14 @@ import {
   FaStar, FaUsers, FaChartLine
 } from 'react-icons/fa';
 import { motion } from 'framer-motion'; 
-
+const card=[
+              { icon: FaShieldAlt, title: "Bank-Level Security", desc: "SSL encryption, verified payments, fraud protection", color: "from-blue-500 to-indigo-600" },
+              { icon: FaTruck, title: "Lightning Delivery", desc: "Same-day in Dhaka, 24h nationwide, live tracking", color: "from-orange-500 to-red-500" },
+              { icon: FaUsers, title: "Expert Vetted", desc: "Vet-approved products, seller background checks", color: "from-emerald-500 to-teal-600" },
+              { icon: FaHeadset, title: "24/7 Live Support", desc: "Pet experts available via chat/call/email", color: "from-purple-500 to-pink-600" },
+              { icon: FaChartLine, title: "Price Match Guarantee", desc: "Cheapest prices + exclusive member discounts", color: "from-amber-500 to-yellow-600" },
+              { icon: FaPaw, title: "Pet Happiness Promise", desc: "30-day returns, quality guarantee or refund", color: "from-primary to-secondary" }
+            ]
 const About = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-base-200 to-base-100">
@@ -113,14 +120,7 @@ const About = () => {
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { icon: FaShieldAlt, title: "Bank-Level Security", desc: "SSL encryption, verified payments, fraud protection", color: "from-blue-500 to-indigo-600" },
-              { icon: FaTruck, title: "Lightning Delivery", desc: "Same-day in Dhaka, 24h nationwide, live tracking", color: "from-orange-500 to-red-500" },
-              { icon: FaUsers, title: "Expert Vetted", desc: "Vet-approved products, seller background checks", color: "from-emerald-500 to-teal-600" },
-              { icon: FaHeadset, title: "24/7 Live Support", desc: "Pet experts available via chat/call/email", color: "from-purple-500 to-pink-600" },
-              { icon: FaChartLine, title: "Price Match Guarantee", desc: "Cheapest prices + exclusive member discounts", color: "from-amber-500 to-yellow-600" },
-              { icon: FaPaw, title: "Pet Happiness Promise", desc: "30-day returns, quality guarantee or refund", color: "from-primary to-secondary" }
-            ].map((feature, i) => (
+            {card.map((feature, i) => (
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
@@ -162,55 +162,6 @@ const About = () => {
               <div className="text-xl font-semibold text-base-content/80">{stat.label}</div>
             </motion.div>
           ))}
-        </div>
-      </section>
-
-
-      <section className="py-24 px-6 bg-gradient-to-b from-base-100 to-base-200">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-black mb-8 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent"
-          >
-            Ready to Join the PawMart Family?
-          </motion.h2>
-          <p className="text-xl text-base-content/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Create your account today and get ৳200 welcome credit on your first purchase!
-          </p>
-          <div className="flex flex-col lg:flex-row gap-6 justify-center items-center mb-16">
-            <Link to="/register" className="btn btn-lg btn-primary shadow-2xl text-xl px-12 border-0 bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary">
-              🚀 Get Started Free
-            </Link>
-            <div className="flex gap-4 text-2xl">
-              <a href="#" className="p-3 bg-primary/20 hover:bg-primary/40 rounded-2xl transition-all"><FaFacebookF /></a>
-              <a href="#" className="p-3 bg-gradient-to-r from-pink-500 to-purple-500 hover:scale-110 rounded-2xl transition-all"><FaInstagram /></a>
-              <a href="#" className="p-3 bg-sky-500 hover:bg-sky-600 rounded-2xl transition-all"><FaTwitter /></a>
-              <a href="#" className="p-3 bg-red-500 hover:bg-red-600 rounded-2xl transition-all"><FaYoutube /></a>
-            </div>
-          </div>
-
-
-          <div className="grid md:grid-cols-3 gap-8 text-sm text-base-content/70">
-            <div>
-              <h4 className="font-bold text-primary mb-3 flex items-center gap-2">
-                <FaMapMarkerAlt /> Office
-              </h4>
-              <p>Level-4, 34, Awal Centre<br/>Banani, Dhaka-1213</p>
-            </div>
-            <div>
-              <h4 className="font-bold text-primary mb-3 flex items-center gap-2">
-                <FaEnvelope /> Email
-              </h4>
-              <p>support@pawmart.com<br/>business@pawmart.com</p>
-            </div>
-            <div>
-              <h4 className="font-bold text-primary mb-3 flex items-center gap-2">
-                <FaHeadset /> Helpline
-              </h4>
-              <p>01335-106731<br/>01332-502004<br/>(Sat-Thu, 10AM-7PM)</p>
-            </div>
-          </div>
         </div>
       </section>
     </div>

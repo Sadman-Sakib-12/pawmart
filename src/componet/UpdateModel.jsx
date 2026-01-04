@@ -81,15 +81,7 @@ const UpdateModel = () => {
                             className='input w-full rounded-full focus:border-0 focus:outline-gray-200' alt="" />
                     </div>
 
-                    {/* <div>
-
-                        <label className='label font-medium'>Description</label>
-                        <textarea
-                            name="description"
-                            required
-                            rows='3'
-                            className='textarea w-full rounded-2xl focus:outline-gray-200 h-[250px]' placeholder=''></textarea>
-                    </div> */}
+                
 
                     <div>
                         <label className='label font-medium'>Image URL</label>
@@ -101,12 +93,7 @@ const UpdateModel = () => {
                             placeholder='https://example.com/image.jpg' alt="" />
                     </div>
 
-                    {/* <div>
-                         <label className='label font-medium'>Date</label>
-                         <input 
-                         type=""
-                         name='' className='input w-full rounded-full focus:border-0 focus:outline-gray-200' alt="" />
-                     </div> */}
+                
 
                     <div>
                         <button

@@ -13,7 +13,7 @@ const SalesAnalytics = () => {
 
   const fetchAnalytics = async () => {
     try {
-      const res = await fetch('http://localhost:3000/overview');
+      const res = await fetch('https://pawmart-server-gray.vercel.app/overview');
       const result = await res.json();
       setData(result);
       setLoading(false);
@@ -45,7 +45,7 @@ const SalesAnalytics = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-base-200 to-base-100 py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
+
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-5 bg-white/90 backdrop-blur-xl px-10 py-6 rounded-full shadow-2xl mb-8 border border-white/50">
             <FaChartBar className="text-4xl text-primary animate-pulse" />
@@ -93,7 +93,7 @@ const SalesAnalytics = () => {
           </div>
         </div>
 
-        {/* Charts Grid */}
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
      
           <div className="card bg-base-100 shadow-2xl p-8">

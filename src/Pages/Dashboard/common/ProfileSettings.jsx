@@ -17,8 +17,8 @@ const ProfileSettings = () => {
       setName(user.displayName || '');
       setPhotoURL(user.photoURL || '');
 
-      // Fetch role from MongoDB
-      fetch(`http://localhost:3000/users/${user.email}`)
+
+      fetch(`https://pawmart-server-gray.vercel.app/users/${user.email}`)
         .then(res => res.json())
         .then(data => {
           if (data.role) {
@@ -96,7 +96,7 @@ const ProfileSettings = () => {
         <div className="card bg-base-100 shadow-2xl rounded-3xl overflow-hidden">
           <div className="card-body p-10">
             <div className="flex flex-col md:flex-row items-center gap-12">
-              {/* Avatar */}
+ 
               <div className="flex flex-col items-center">
                 <div className="avatar">
                   <div className="w-56 rounded-full ring ring-primary ring-offset-base-100 ring-offset-8 shadow-2xl">
@@ -125,9 +125,9 @@ const ProfileSettings = () => {
                 )}
               </div>
 
-              {/* Details */}
+
               <div className="flex-1 space-y-10 w-full">
-                {/* Name */}
+ 
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text text-xl font-bold flex items-center gap-3">
@@ -150,7 +150,7 @@ const ProfileSettings = () => {
                   )}
                 </div>
 
-                {/* Email */}
+
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text text-xl font-bold flex items-center gap-3">
@@ -161,14 +161,9 @@ const ProfileSettings = () => {
                   <div className="text-2xl font-medium text-base-content/80">
                     {user.email}
                   </div>
-                  <label className="label">
-                    <span className="label-text-alt text-base-content/60">
-                      Email cannot be changed
-                    </span>
-                  </label>
                 </div>
 
-                {/* Role Badge */}
+
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text text-xl font-bold flex items-center gap-3">
@@ -181,7 +176,7 @@ const ProfileSettings = () => {
                   </div>
                 </div>
 
-                {/* Actions */}
+  
                 <div className="flex gap-6 mt-12">
                   {isEditing ? (
                     <>
